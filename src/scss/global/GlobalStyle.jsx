@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1.6rem;
     min-height: 100vh;
-    background-color: grey;
+    background: linear-gradient(115deg, rgb(68, 124, 156), rgb(25, 15, 115));
   }
   
   a {
