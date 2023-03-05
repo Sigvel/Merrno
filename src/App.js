@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 
+import Layout from "./components/layout/Layout";
+import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Cart from "./pages/cart";
-import Layout from "./components/layout/Layout";
-import RouteNotFound from "./pages/error";
 import Product from "./pages/product";
+import RouteNotFound from "./pages/error";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="cart/" element={<Cart />} />
