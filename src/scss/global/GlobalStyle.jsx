@@ -28,6 +28,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     min-height: 100vh;
     background: linear-gradient(115deg, rgb(68, 124, 156), rgb(25, 15, 115));
+    margin: 0.5rem;
+  }
+
+  li {
+    list-style: none;
   }
   
   a {
