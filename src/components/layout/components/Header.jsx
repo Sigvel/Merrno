@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import Nav from "./Nav";
 
 
 function Header() {
     return (
         <header>
-            <div>Merrno</div>
+            <Link to="/">Merrno</Link>
             <Nav />
         </header>
     )
