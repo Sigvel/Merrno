@@ -6,7 +6,7 @@ import Contact from "./pages/contact";
 import Cart from "./pages/cart";
 import Product from "./pages/product";
 import RouteNotFound from "./pages/error";
-import "./App.css";
+import "./scss/styles.scss"
 
 function App() {
   return (
