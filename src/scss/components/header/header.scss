@@ -5,12 +5,12 @@ header {
     text-align: center;
 
     li, a, label {
-        font-weight: bold;
+        font-weight: var(--font-semibold);
     }
 
     img {
         margin: 0 auto;
-        border: 0.2rem solid white;
+        border: 0.1rem solid white;
         border-radius: 5rem;
         padding: 0.2rem 1rem;
         width: 5rem;
@@ -19,6 +19,7 @@ header {
 }
 
 .logo {
+    font-weight: var(--font-bold);
     font-size: 2.5rem;
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     text-transform: uppercase;
@@ -28,6 +29,7 @@ nav {
     display: grid;
     ul {
         display: flex;
+        font-size: 1.1rem;
         li {
             flex: 1;
         }
@@ -41,11 +43,4 @@ nav {
         width: 10rem;
         display: none;
         }
-}
-
-.element-border {
-    border: solid 0.2rem white;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
