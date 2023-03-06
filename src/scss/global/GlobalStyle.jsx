@@ -24,9 +24,16 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    font-family: var(--font-fam);
+    color: white;
     font-size: 1.6rem;
     min-height: 100vh;
-    background: linear-gradient(115deg, rgb(68, 124, 156), rgb(25, 15, 115));
+    background: linear-gradient(95deg, rgb(68, 124, 156), rgb(25, 55, 100));
+    margin: 0.5rem;
+  }
+
+  li {
+    list-style: none;
   }
   
   a {
@@ -40,6 +47,7 @@ const GlobalStyle = createGlobalStyle`
   video {
     display: block;
     max-width: 100%;
+    object-fit: cover;
   }
 `;
 
