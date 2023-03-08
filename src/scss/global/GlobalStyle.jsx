@@ -46,8 +46,8 @@ const GlobalStyle = createGlobalStyle`
   svg,
   video {
     display: block;
-    max-width: 100%;
-    object-fit: cover;
+    width: 100%;
+    object-fit: center;
   }
 `;
 
