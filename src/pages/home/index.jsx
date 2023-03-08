@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import ProductsFetch from "../../components/Products";
+import ProductsFetch from "../../components/GetProducts";
 import * as S from "../../App.styles"
 import CableIcon from "../../assets/interface/categories/icons8-audio-cable-96.png";
 import HangerIcon from "../../assets/interface/categories/icons8-hanger-96.png";
