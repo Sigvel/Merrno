@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as S from "../App.styles";
 import styles from "../scss/modules/Card.module.scss";
-import ProductPrice from "./Price";
+import ProductPrice from "./product/Price";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 

@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
+
 import * as S from "../App.styles"
 import styles from "../scss/modules/Card.module.scss";
+import ProductPrice from "./product/Price";
+import Breadcrumbs from "./pages/BreadCrumb";
 
 const url = "https://api.noroff.dev/api/v1/online-shop/";
 
@@ -42,14 +45,20 @@ function ProductFetch() {
 
     console.log(product);
     return (
+        <>
+        <Breadcrumbs />
         <S.Card className={styles.bigCard}>
             <figure>
           <img src={product.imageUrl} alt={product.title} />
           </figure>
-          <div>{product.price}</div>
-          <h2>{product.title}</h2>
+          <p>Price</p>
+          <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
+        </S.Card>
+        <S.Card>
+        <h2>{product.title}</h2>
           <h3>{product.description}</h3>
         </S.Card>
+        </>
       );
 }
 
