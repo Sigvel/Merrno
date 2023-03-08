@@ -1,0 +1,56 @@
+.smallCard {
+    display: flex;
+flex-direction: column;
+
+figure {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    img {
+        height: 15rem;
+        border-radius: 1rem;
+        object-fit: center;
+    }
+}
+
+h2, h3 {
+width: 90%;
+margin: 0 auto;
+}
+
+h2 {
+    font-weight: var(--font-semibold);
+    margin-top: 1rem;
+}
+
+h3 {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-weight: 600;
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+}
+
+div:has(button) {
+    width: 90%;
+    margin: 1rem auto 1.5rem;
+}
+}
+
+.bigCard {
+
+    figure {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 1rem;
+        img {
+            height: 15rem;
+            border-radius: 1rem;
+            object-fit: center;
+        }
+    }
+}
