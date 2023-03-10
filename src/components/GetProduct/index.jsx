@@ -54,6 +54,7 @@ function ProductFetch() {
           </figure>
           <p>Price</p>
           <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
+          <S.Button>show</S.Button>
         </S.Card>
         <S.Card className={styles.bigCard}>
           <h2>Description</h2>
