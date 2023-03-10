@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
-import "../../../scss/components/header/header.scss";
-import * as S from "../../../App.styles"
+import Nav from "../Nav/index";
+import "./../../../../scss/components/header/header.scss";
+import * as S from "../../../../App.styles"
 
 function Header() {
   return (
