@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     font-size: 1.6rem;
     min-height: 100vh;
-    background: linear-gradient(95deg, rgb(68, 124, 156), rgb(25, 55, 100));
+    background: linear-gradient(95deg, #B97F00, #6B5628);
     margin: 0.5rem;
   }
 
