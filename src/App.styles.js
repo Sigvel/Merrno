@@ -4,7 +4,7 @@ import "./scss/components/variables.scss";
 export const PageContainer = styled.div`
   border: solid 0.1rem #676F9D;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem 15rem;
+  padding: 0.5rem 1rem 9rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   h1 {
@@ -12,7 +12,7 @@ export const PageContainer = styled.div`
     text-transform: uppercase;
     font-weight: var(--font-bold);
     position: fixed;
-    inset: auto 0.5rem 6.2rem;
+    inset: auto 0.5rem 6rem;
     // background: linear-gradient(95deg, #b97f00, #6b5628);
     background: #2D3250;
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -52,11 +52,10 @@ export const Category = styled.ul`
   display: flex;
   overflow-x: scroll;
   border: 0.1rem solid #676F9D;
-  border-radius: 0.5rem;
   // background: linear-gradient(95deg, #b97f00, #6b5628);
   background: #2D3250;
   position: fixed;
-  inset: auto 0.5rem 0rem;
+  inset: auto 0.5rem 0;
 
   img {
     background: #F8B179;

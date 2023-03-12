@@ -63,8 +63,10 @@
     padding: 0.3rem 0rem;
   }
 
-  h2, p {
+  h2, h3 {
     font-weight: var(--font-bold);
+    text-transform:uppercase;
+    padding-top: 1rem;
   }
 
   div:has(button) {
