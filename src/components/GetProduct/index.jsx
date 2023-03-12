@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 import * as S from "../../App.styles"
-import styles from "../../scss/modules/Card.module.scss";
+import card from "../../scss/modules/Card.module.scss";
+import category from "../../scss/modules/Category.module.scss"
 import ProductPrice from "../PriceCalculation/index";
 import Breadcrumbs from "../pages/Breadcrumbs/index";
 
@@ -45,25 +46,27 @@ function ProductFetch() {
 
     console.log(product);
     return (
-        <>
+        <div>
         <h1>{product.title}</h1>
         <Breadcrumbs />
-        <S.Card className={styles.bigCard}>
+        <S.Card className={card.bigCard}>
             <figure>
           <img src={product.imageUrl} alt={product.title} />
           </figure>
           <p>Price</p>
           <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
+          <div>
           <S.Button>Add to cart</S.Button>
+          </div>
         </S.Card>
-        <S.Card className={styles.bigCard}>
+        <S.Card className={card.bigCard}>
           <h2>Description</h2>
           <h3>{product.description}</h3>
         </S.Card>
-        <S.Category>
+        <S.Category className={category.btn}>
             <S.Button type="button">Reviews</S.Button>
         </S.Category>
-        </>
+        </div>
       );
 }
 
