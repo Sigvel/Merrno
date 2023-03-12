@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
-import * as S from "../../App.styles"
-import card from "../../scss/modules/Card.module.scss";
-import category from "../../scss/modules/Category.module.scss"
-import ProductPrice from "../Product/PriceCalculation/index";
-import Breadcrumbs from "../pages/Breadcrumbs/index";
+import * as S from "../../../App.styles"
+import card from "../../../scss/modules/Card.module.scss";
+import category from "../../../scss/modules/Category.module.scss"
+import ProductPrice from "../PriceCalculation/index";
+import Breadcrumbs from "../../pages/Breadcrumbs/index";
 
 const url = "https://api.noroff.dev/api/v1/online-shop/";
 

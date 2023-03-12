@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ProductFetch from "../../components/GetProduct/index";
+import ProductFetch from "../../components/Product/GetProduct/index";
 import * as S from "../../App.styles"
 
 function Product() {
