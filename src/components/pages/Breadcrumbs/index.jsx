@@ -14,7 +14,7 @@ function Breadcrumbs() {
 
       return (
         <S.Breadcrumb key={index}>
-          <Link to={currentLink}>{crumb}</Link>
+          <Link to={currentLink}><li>{crumb}</li></Link>
         </S.Breadcrumb>
       );
     });
