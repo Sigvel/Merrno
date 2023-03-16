@@ -28,10 +28,8 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     font-size: 1.6rem;
     min-height: 100vh;
-    // background: linear-gradient(95deg, #B97F00, #6B5628);
-    // background: linear-gradient(95deg, #2D3250, #424669);
     background: #2D3250;
-    margin: 0.5rem;
+    margin: 0rem 0.5rem;
   }
 
   li {

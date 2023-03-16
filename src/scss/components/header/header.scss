@@ -1,46 +1,56 @@
 header {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    text-align: center;
+    position: fixed;
+    inset: auto 0.5rem;
+    background:#2d3250;
 
     li, a, label {
         font-weight: var(--font-semibold);
-    }
-
-    img {
-        margin: 0 auto;
-        border: 0.1rem solid white;
-        border-radius: 5rem;
-        padding: 0.2rem 1rem;
-        width: 5rem;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 }
 
 .logo {
     font-weight: var(--font-bold);
-    font-size: 2.5rem;
-    text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 2.2rem;
+    text-shadow: rgba(103, 111, 157, 0.90) 0px 3px 4px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 nav {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     ul {
         display: flex;
-        font-size: 1.1rem;
+
         li {
-            flex: 1;
+            text-align: center;
+        }
+        img {
+            margin: 0 auto;
+            border-radius: 5rem;
+            padding: 0.1rem 1rem;
+            width: 4rem;
+            box-shadow: rgba(248,177,121, 0.35) 0px 5px 15px;
+            background: #F8B179;
         }
     }
+}
 
-    form {
-        width: 100%;
+@media (min-width: 530px) {
+    .logo {
+        font-size: 3rem;
     }
-
-    input[type="search"] {
-        width: 10rem;
-        display: none;
+    nav {
+        ul {
+            li {
+                img {
+                    width: 7.2rem;
+                    margin: 0.2rem 1rem;
+                    padding: 0.2rem 2.3rem;
+                    }
+            }
         }
+    }
 }
