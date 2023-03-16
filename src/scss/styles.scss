@@ -1,2 +1,26 @@
-@import url(./components/header/header.scss);
+@import url(./components/variables.scss);
 
+.element-border {
+    border: solid 0.1rem #676F9D;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow:hidden;
+    -webkit-box-orient: vertical;
+}
+
+.sale {
+    color: gainsboro !important;
+    margin-bottom: 0rem;
+    text-decoration: line-through;
+}
+
+.sale-color {
+    color: red;
+}

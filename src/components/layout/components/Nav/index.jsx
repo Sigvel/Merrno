@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import SearchIcon from "../../../assets/interface/navigation/icons8-search-48.png"
-import ContactIcon from "../../../assets/interface/navigation/icons8-headset-48.png"
-import CartIcon from "../../../assets/interface/navigation/icons8-shopping-bag-48.png"
+import SearchIcon from "../../../../assets/interface/navigation/icons8-search-48.png"
+import ContactIcon from "../../../../assets/interface/navigation/icons8-headset-48.png"
+import CartIcon from "../../../../assets/interface/navigation/icons8-shopping-bag-48.png"
 
 
 function Nav() {
