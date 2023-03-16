@@ -7,9 +7,9 @@
     margin: 0 auto;
     margin-top: 1rem;
     img {
-      height: 50vw;
+      height: 35vw;
       border-radius: 1rem;
-      object-fit: center;
+      object-fit:contain;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
@@ -23,15 +23,18 @@
   h2 {
     font-weight: var(--font-semibold);
     margin-top: 1rem;
+    font-size: 1.4rem;
   }
 
   h3 {
     flex-grow: 1;
     margin-bottom: 1.5rem;
+    font-size: 1.1rem;
   }
 
   p {
     font-weight: 600;
+    font-size: 1.4rem;
     color: white;
     width: 90%;
     margin: 0 auto;
@@ -40,6 +43,14 @@
   div:has(button) {
     width: 90%;
     margin: 1rem auto 1.5rem;
+  }
+
+  @media (min-width: 530px) {
+    figure {
+      img {
+        height: 20vw;
+      }
+    }
   }
 }
 
