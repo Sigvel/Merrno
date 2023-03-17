@@ -49,7 +49,7 @@ function Contact() {
         </S.imgContainer>
       </S.Card>
       <S.Category className={category.btn}>
-      <S.Button type="button">Reviews</S.Button>
+      <S.Button type="button">Show form</S.Button>
       </S.Category>
     </S.PageContainer>
   );
