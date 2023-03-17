@@ -28,12 +28,6 @@ function Layout() {
     );
     
     setFilteredProducts(filteredData);
-
-    if(term === "") {
-      setFilteredProducts([]);
-    }
-    
-    console.log(filteredData);
   };
 
   return (
