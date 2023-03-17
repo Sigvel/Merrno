@@ -1,0 +1,43 @@
+.scroll-box {
+  position: fixed;
+  inset: 9rem 0.7rem 5rem 0.7rem;
+  background: #2d3250;
+  @media (min-width: 530px) {
+    inset: 9.9rem 0.7rem 6rem 0.7rem;
+  }
+}
+
+.search-result {
+  height: 42rem;
+  width: 95%;
+  margin: 0 auto;
+  overflow-x: scroll;
+  li {
+    display: flex;
+    align-items: center;
+    height: 20%;
+    background: #424669;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    figure {
+      height: 7rem;
+      width: 7rem;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: scale-down;
+      }
+    }
+  }
+
+  @media (min-width: 530px) {
+    height: 40.5rem;
+    li {
+        height: 22%;
+        figure {
+          height: 8rem;
+          width: 8rem;
+        }
+    }
+  }
+}
