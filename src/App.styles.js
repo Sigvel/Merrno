@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import "./scss/components/_variables.scss";
 
+// Containers
 export const PageContainer = styled.div`
   border: solid 0.1rem #676f9d;
   border-radius: 0.5rem;
   padding: 9rem 1rem 10rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  min-height: 100%;
 
   h1 {
     text-align: center;
@@ -25,8 +27,12 @@ export const PageContainer = styled.div`
     padding: 11rem 1rem 10rem;
     h1 {
       font-size: 2.5rem;
-      inset: auto 0.5rem 6.1rem;
+      inset: auto 0.5rem 7.2rem;
     }
+  }
+
+  @media (min-width: 780px) {
+    padding: 8rem 1rem 13rem;
   }
 `;
 
@@ -58,17 +64,6 @@ export const Card = styled.div`
   border-radius: 1rem;
 `;
 
-export const Button = styled.button`
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  padding: 0.3rem 1.5rem;
-  border-style: none;
-  border-radius: 3rem;
-  background: #f8b179;
-  box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
-  color: #2d3250;
-`;
-
 export const Category = styled.ul`
   display: flex;
   overflow-x: scroll;
@@ -85,6 +80,41 @@ export const Category = styled.ul`
     width: 4rem;
     border-radius: 0.5rem;
   }
+
+  @media (min-width: 530px) {
+    img {
+      width: 5rem;
+    }
+  }
+`;
+
+export const imgBox = styled.img`
+  background: #f8b179;
+  box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
+  padding: 0.5rem;
+  margin: 1rem 0.8rem;
+  width: 4rem;
+  border-radius: 0.5rem;
+
+  @media (min-width: 530px) {
+    width: 5rem;
+  }
+`;
+
+export const imgContainer = styled.div`
+display: flex;
+`;
+
+// Elements
+export const Button = styled.button`
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 0.3rem 1.5rem;
+  border-style: none;
+  border-radius: 3rem;
+  background: #f8b179;
+  box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
+  color: #2d3250;
 `;
 
 export const Breadcrumb = styled.ul`
@@ -96,23 +126,26 @@ export const Breadcrumb = styled.ul`
   }
 `;
 
+// Search
+
 export const SearchBar = styled.div`
-display: flex;
+  display: flex;
+  width: 100%;
 
   input[type="search"] {
     width: 100%;
     padding: 0.25rem 0.7rem;
     border-radius: 5rem;
     border: none;
-    background: #F8B179;
-    color: #2D3250;
+    background: #f8b179;
+    color: #2d3250;
     font-size: 1.2rem;
-    box-shadow: rgba(248,177,121, 0.35) 0px 5px 15px;
+    box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
     ::placeholder {
-      color: #2D3250;
+      color: #2d3250;
     }
     :focus {
-      outline: #2D3250;
+      outline: #2d3250;
     }
   }
 
@@ -120,7 +153,7 @@ display: flex;
     border-radius: 5rem;
     padding: 0.1rem 1rem;
     width: 4rem;
-    background: #F8B179;
+    background: #f8b179;
     position: absolute;
     right: 13.5rem;
   }
@@ -142,17 +175,17 @@ display: flex;
 `;
 
 export const SearchIcon = styled.div`
-img {
-  margin: 0 auto;
-  border-radius: 5rem;
-  padding: 0.1rem 1rem;
-  width: 4rem;
-  box-shadow: rgba(248,177,121, 0.35) 0px 5px 15px;
-  background: #F8B179;
+  img {
+    margin: 0 auto;
+    border-radius: 5rem;
+    padding: 0.1rem 1rem;
+    width: 4rem;
+    box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
+    background: #f8b179;
 
-  @media (min-width: 530px) {
-    width: 7.4rem;
-    padding: 0.2rem 2.4rem;
+    @media (min-width: 530px) {
+      width: 7.4rem;
+      padding: 0.2rem 2.4rem;
+    }
   }
-}
 `;
