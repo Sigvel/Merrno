@@ -2,9 +2,10 @@
 @import url(./components/search/searchResult.scss);
 
 .element-border {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: solid 0.1rem #676F9D;
-    text-align: center;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -16,7 +17,7 @@
     overflow:hidden;
     -webkit-box-orient: vertical;
 }
-
+ // Sale
 .sale {
     color: gainsboro !important;
     margin-bottom: 0rem;

@@ -35,7 +35,7 @@ const ComponentWithInput = ({ onClick }) => {
 
   return (
     <>
-      <S.SearchBar styles="display: flex; flex-direction: row;">
+      <S.SearchBar>
         <input onChange={handleSearch} value={searchTerm} type="search" placeholder="Search..." />
         <label onClick={onClick}>
           <img src={SearchIcon} alt="Search Icon" />
@@ -77,7 +77,7 @@ function SearchBar() {
     setIsActive(!isActive);
   }
 
-  return <div className="element-border">{isActive ? <ComponentWithInput onClick={handleClick} /> : <Icon onClick={handleClick} />}</div>;
+  return <div className="element-border full-width">{isActive ? <ComponentWithInput onClick={handleClick} /> : <Icon onClick={handleClick} />}</div>;
 }
 
 export default SearchBar;
