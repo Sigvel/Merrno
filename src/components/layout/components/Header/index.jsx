@@ -7,7 +7,7 @@ function Header() {
   return (
     <header>
       <Link to="/" className="logo element-border">
-        <p>Merrno</p>
+        Merrno
       </Link>
       <Nav/>
     </header>
