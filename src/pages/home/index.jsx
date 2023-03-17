@@ -1,4 +1,6 @@
-// import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DataContext } from "../../components/layout/Layout"
+
 import AllProducts from "../../components/Product/AllProducts/index";
 import * as S from "../../App.styles"
 import CableIcon from "../../assets/interface/categories/icons8-audio-cable-96.png";
@@ -7,8 +9,6 @@ import SneakerIcon from "../../assets/interface/categories/icons8-sneakers-96.pn
 import ElectricalIcon from "../../assets/interface/categories/icons8-electrical-96.png";
 import JewelryIcon from "../../assets/interface/categories/icons8-jewelry-96.png";
 import ClothesIcon from "../../assets/interface/categories/icons8-clothes-96.png";
-import { useContext } from "react";
-import { DataContext } from "../../components/layout/Layout"
 
 function Home() {
   const {products, filteredProducts} = useContext(DataContext);
