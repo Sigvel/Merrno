@@ -4,6 +4,16 @@ const GlobalStyle = createGlobalStyle`
 :root {
     font-size: 62.5%;
   }
+
+  html, 
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  .App {
+    height: 100vh;
+  }
   
   html {
     color-scheme: dark light;
@@ -27,7 +37,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-fam);
     color: white;
     font-size: 1.6rem;
-    min-height: 100vh;
     background: #2D3250;
     margin: 0rem 0.5rem;
   }
