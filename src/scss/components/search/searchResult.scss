@@ -1,21 +1,25 @@
 .scroll-box {
   position: fixed;
-  inset: 9rem 0.7rem 5rem 0.7rem;
+  inset: 7.6rem 0.7rem 9rem 0.7rem;
   background: #2d3250;
   @media (min-width: 530px) {
-    inset: 9.9rem 0.7rem 6rem 0.7rem;
+    inset: 9.9rem 0.7rem 7rem 0.7rem;
+  }
+
+  @media (min-width: 780px) {
+    inset: 5.3rem 0.7rem 7rem 0.7rem;
   }
 }
 
 .search-result {
-  height: 42rem;
+  height: 80.4vh;
   width: 95%;
   margin: 0 auto;
   overflow-x: scroll;
   li {
     display: flex;
     align-items: center;
-    height: 20%;
+    height: 10%;
     background: #424669;
     margin: 0.5rem;
     border-radius: 0.5rem;
@@ -31,13 +35,17 @@
   }
 
   @media (min-width: 530px) {
-    height: 40.5rem;
+    height: 74.5vh;
     li {
-        height: 22%;
+        height: 13%;
         figure {
           height: 8rem;
           width: 8rem;
         }
     }
+  }
+
+  @media (min-width: 780px) {
+    height: 79.5vh;
   }
 }
