@@ -9,7 +9,7 @@
     img {
       height: 35vw;
       border-radius: 1rem;
-      object-fit:contain;
+      object-fit: cover;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
@@ -63,7 +63,7 @@
     img {
       height: 50vw;
       border-radius: 1rem;
-      object-fit: center;
+      object-fit: cover;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
