@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
   border: solid 0.1rem #676f9d;
   border-radius: 0.5rem;
   padding: 9rem 1rem 10rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   min-height: 100%;
 
   h1 {
@@ -36,6 +36,7 @@ export const PageContainer = styled.div`
   }
 `;
 
+// Products container
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -50,21 +51,13 @@ export const Container = styled.div`
     grid-template-columns: repeat(3, 1fr);
   }
 
-  // @media (min-width: 780px) {
-  // }
-
   @media (min-width: 900px) {
     grid-template-columns: repeat(4, 1fr);
   }
 `;
 
-export const Card = styled.div`
-  background: #424669;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 1rem;
-`;
-
-export const Category = styled.ul`
+// Page aside feature Container 
+export const AsideFeature = styled.aside`
   display: flex;
   overflow-x: scroll;
   border: 0.1rem solid #676f9d;
@@ -88,11 +81,15 @@ export const Category = styled.ul`
   }
 `;
 
+export const imgContainer = styled.div`
+display: flex;
+gap: 1rem;
+`;
+
 export const imgBox = styled.img`
   background: #f8b179;
   box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
   padding: 0.5rem;
-  margin: 1rem 0.8rem;
   width: 4rem;
   border-radius: 0.5rem;
 
@@ -101,11 +98,15 @@ export const imgBox = styled.img`
   }
 `;
 
-export const imgContainer = styled.div`
-display: flex;
+// ELEMENTS
+
+// Common Card style
+export const Card = styled.div`
+  background: #424669;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 1rem;
 `;
 
-// Elements
 export const Button = styled.button`
   text-transform: uppercase;
   font-size: 1.2rem;
