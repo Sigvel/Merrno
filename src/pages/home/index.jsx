@@ -16,14 +16,14 @@ function Home() {
   return (
     <S.PageContainer>
       <AllProducts products={products} onFilter={filteredProducts}/>
-        <S.Category>
+        <S.AsideFeature>
           <img src={ElectricalIcon} alt="Electrical category" />
           <img src={ClothesIcon} alt="clothes category" />
           <img src={CableIcon} alt="cable category" />
           <img src={LaptopIcon} alt="laptop category" />
           <img src={SneakerIcon} alt="sneaker category" />
           <img src={JewelryIcon} alt="jewelry category" />
-        </S.Category>
+        </S.AsideFeature>
       </S.PageContainer>
   );
 }

@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 import * as S from "../../../App.styles"
-import card from "../../../scss/modules/Card.module.scss";
-import category from "../../../scss/modules/Category.module.scss"
+import C from "../../../scss/modules/cards/Card.module.scss";
+import F from "../../../scss/modules/pageFeature/Feature.module.scss";
+
 import ProductPrice from "../PriceCalculation/index";
 import Breadcrumbs from "../../pages/Breadcrumbs/index";
 
@@ -49,7 +50,7 @@ function ProductFetch() {
         <div>
         <h1>{product.title}</h1>
         <Breadcrumbs />
-        <S.Card className={card.bigCard}>
+        <S.Card className={C.bigCard}>
             <figure>
           <img src={product.imageUrl} alt={product.title} />
           </figure>
@@ -59,7 +60,7 @@ function ProductFetch() {
           <S.Button>Add to cart</S.Button>
           </div>
         </S.Card>
-        <S.Card className={card.bigCard}>
+        <S.Card className={C.bigCard}>
             <section>
           <h2>Description</h2>
           <p>{product.description}</p>
@@ -79,9 +80,9 @@ function ProductFetch() {
           <p>{product.rating}</p>
           </section>
         </S.Card>
-        <S.Category className={category.btn}>
+        <S.AsideFeature className={F.featureButton}>
             <S.Button type="button">Reviews</S.Button>
-        </S.Category>
+        </S.AsideFeature>
         </div>
       );
 }
