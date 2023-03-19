@@ -8,7 +8,6 @@ function ProductPrice({ price, discount }) {
   if (price !== discount) {
     discountedPrice = price - (price * (discount / price));
     sale = (discountedPrice / price) * 100;
-    console.log(sale);
   } else {
     sale = false;
   }
