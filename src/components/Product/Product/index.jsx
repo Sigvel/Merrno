@@ -94,7 +94,7 @@ function ProductFetch() {
               <S.Card key={review.id} className={styles.review}>
                 <h2>{review.username}</h2>
                 <p>{review.description}</p>
-                <p className={styles.rating}>Stars: {review.rating}</p>
+                <p className={styles.rating}>Rated: {review.rating} / 5</p>
               </S.Card>
             );
           })}
