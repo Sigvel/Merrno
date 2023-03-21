@@ -5,6 +5,10 @@ import styles from "../../../pages/product/Product.module.scss";
 import C from "../../../scss/modules/cards/Card.module.scss";
 import F from "../../../scss/modules/pageFeature/Feature.module.scss";
 
+import * as S from "../../../App.styles"
+import C from "../../../scss/modules/cards/Card.module.scss";
+import F from "../../../scss/modules/pageFeature/Feature.module.scss";
+
 import ProductPrice from "../PriceCalculation/index";
 import Breadcrumbs from "../../pages/Breadcrumbs/index";
 
@@ -40,19 +44,14 @@ function ProductFetch() {
     return <div>Loading...</div>;
   }
 
-  if (isError) {
-    return <div>Error</div>;
-  }
-
-  console.log(product);
-  return (
-    <div>
-      <h1>{product.title}</h1>
-      <Breadcrumbs />
-      <div className={styles.container}>
+    console.log(product);
+    return (
+        <div>
+        <h1>{product.title}</h1>
+        <Breadcrumbs />
         <S.Card className={C.bigCard}>
-          <figure>
-            <img src={product.imageUrl} alt={product.title} />
+            <figure>
+          <img src={product.imageUrl} alt={product.title} />
           </figure>
 
           <h2>Price</h2>
@@ -62,8 +61,11 @@ function ProductFetch() {
             <S.Button>Add to cart</S.Button>
           </div>
         </S.Card>
-
         <S.Card className={C.bigCard}>
+            <section>
+          <h2>Description</h2>
+          <p>{product.description}</p>
+          </section>
           <section>
             <h2>Description</h2>
             <p>{product.description}</p>
@@ -83,27 +85,10 @@ function ProductFetch() {
             <p>{product.rating} / 5</p>
           </section>
         </S.Card>
-      </div>
-      <S.AsideFeature className={F.featureButton}>
-        <section className={styles.reviewSection}>
-          <h2>Reviews</h2>
-          {product.reviews.map((review) => {
-            return (
-              <S.Card key={review.id} className={styles.review}>
-                <h2>{review.username}</h2>
-                <p>{review.description}</p>
-                <p className={styles.rating}>Stars: {review.rating} / 5</p>
-              </S.Card>
-            );
-          })}
-        </section>
-        <div>
-          <S.Button type="button" className="show-btn">
-            Reviews
-          </S.Button>
+        <S.AsideFeature className={F.featureButton}>
+            <S.Button type="button">Reviews</S.Button>
+        </S.AsideFeature>
         </div>
-      </S.AsideFeature>
-    </div>
   );
 }
 

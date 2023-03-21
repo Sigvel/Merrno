@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
+
 import Nav from "../Nav/index";
-import "./../../../../scss/components/header/header.scss";
-// import * as S from "../../../../App.styles";
+import "./../../../../scss/components/header/styles.scss";
 
 function Header() {
   return (
     <header>
-        <Link to="/" className="logo">
-          Merrno
-        </Link>
-      <Nav />
+      <Link to="/" className="logo element-border">
+        <p>Merrno</p>
+      </Link>
+      <Nav/>
     </header>
   );
 }

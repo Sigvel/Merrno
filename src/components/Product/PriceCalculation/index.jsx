@@ -3,16 +3,18 @@ import "../../../scss/styles.scss"
 function ProductPrice({ price, discount }) {
 
   let sale;
+  let discountedPrice;
 
   if (price !== discount) {
-    sale = Math.floor(price - discount);
+    discountedPrice = price - (price * (discount / price));
+    sale = (discountedPrice / price) * 100;
   } else {
     sale = false;
   }
 
   return (
     <div>
-      <p className={sale ? "sale" : ""}>{price },-</p>{sale && <p>{discount} <span className="sale-color">-{sale},-</span></p>}
+      <p className={sale ? "sale" : ""}>{price },-</p>{sale && <p>{discount} <span className="sale-color"> -{Math.round(sale)}%</span></p>}
     </div>
   );
 }

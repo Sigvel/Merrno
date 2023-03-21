@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { DataContext } from "../../components/layout/Layout";
+import { DataContext } from "../../components/layout/Layout"
 
 import AllProducts from "../../components/Product/AllProducts/index";
-import * as S from "../../App.styles";
-import styles from "./Home.module.scss";
+import * as S from "../../App.styles"
 import CableIcon from "../../assets/interface/categories/icons8-audio-cable-96.png";
 import LaptopIcon from "../../assets/interface/categories/icons8-laptop-96.png";
 import SneakerIcon from "../../assets/interface/categories/icons8-sneakers-96.png";
@@ -12,22 +11,20 @@ import JewelryIcon from "../../assets/interface/categories/icons8-jewelry-96.png
 import ClothesIcon from "../../assets/interface/categories/icons8-clothes-96.png";
 
 function Home() {
-  const { products, filteredProducts } = useContext(DataContext);
+  const {products, filteredProducts} = useContext(DataContext);
 
   return (
     <S.PageContainer>
-      <AllProducts products={products} onFilter={filteredProducts} />
-      <S.AsideFeature className={styles.feature}>
-        <div className="img-box">
+      <AllProducts products={products} onFilter={filteredProducts}/>
+        <S.AsideFeature>
           <img src={ElectricalIcon} alt="Electrical category" />
           <img src={ClothesIcon} alt="clothes category" />
           <img src={CableIcon} alt="cable category" />
           <img src={LaptopIcon} alt="laptop category" />
           <img src={SneakerIcon} alt="sneaker category" />
           <img src={JewelryIcon} alt="jewelry category" />
-        </div>
-      </S.AsideFeature>
-    </S.PageContainer>
+        </S.AsideFeature>
+      </S.PageContainer>
   );
 }
 

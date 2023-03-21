@@ -17,13 +17,15 @@ function AllProducts({ products }) {
               <figure>
                 <img src={product.imageUrl} alt={product.title}></img>
               </figure>
-              <div className="product-info">
+              <div>
                 <h2>{product.title}</h2>
                 <h3 className="truncate">{product.description}</h3>
               </div>
             <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
             <div>
-            <Link to={`/product/${product.id}`}><S.Button>Show</S.Button></Link>
+              <S.Button>
+                <Link to={`/product/${product.id}`}>Show</Link>
+              </S.Button>
             </div>
           </S.Card>
         );
