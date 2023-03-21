@@ -1,0 +1,5 @@
+.feature {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(auto, 65px));
+    grid-template-columns: repeat(2, 1fr);
+}
