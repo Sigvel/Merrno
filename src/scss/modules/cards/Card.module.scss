@@ -1,6 +1,7 @@
 .smallCard {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   figure {
     width: 85%;

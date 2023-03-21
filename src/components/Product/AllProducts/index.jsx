@@ -14,6 +14,7 @@ function AllProducts({ products }) {
       {products.map((product) => {
         return (
           <S.Card className={C.smallCard} key={product.id}>
+            <section>
               <figure>
                 <img src={product.imageUrl} alt={product.title}></img>
               </figure>
@@ -21,12 +22,16 @@ function AllProducts({ products }) {
                 <h2>{product.title}</h2>
                 <h3 className="truncate">{product.description}</h3>
               </div>
+              </section>
+              
+              <section>
             <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
             <div>
               <S.Button>
                 <Link to={`/product/${product.id}`}>Show</Link>
               </S.Button>
             </div>
+            </section>
           </S.Card>
         );
       })}

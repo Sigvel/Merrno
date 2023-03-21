@@ -151,10 +151,8 @@ export const Button = styled.button`
   border-radius: 3rem;
   background: #f8b179;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  /* box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px; */
   color: #2d3250;
   :hover {
-    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
     box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
     cursor: pointer;
   }
@@ -226,6 +224,11 @@ export const SearchIcon = styled.div`
     width: 4rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background: #f8b179;
+    cursor: pointer;
+    
+    :hover {
+      box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
+    }
 
     @media (min-width: 530px) {
       width: 7.4rem;
