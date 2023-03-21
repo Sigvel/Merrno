@@ -10,6 +10,26 @@ header {
   label {
     font-weight: var(--font-semibold);
   }
+
+  nav {
+    display: flex;
+  
+    ul {
+      display: flex;
+  
+      li {
+        text-align: center;
+      }
+      img {
+        margin: 0 auto;
+        border-radius: 5rem;
+        padding: 0.1rem 1rem;
+        width: 4rem;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        background: #f8b179;
+      }
+    }
+  }
 }
 
 .logo {
@@ -22,26 +42,6 @@ header {
 
 .full-width {
   width: 100%;
-}
-
-nav {
-  display: flex;
-
-  ul {
-    display: flex;
-
-    li {
-      text-align: center;
-    }
-    img {
-      margin: 0 auto;
-      border-radius: 5rem;
-      padding: 0.1rem 1rem;
-      width: 4rem;
-      box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
-      background: #f8b179;
-    }
-  }
 }
 
 @media (min-width: 530px) {
@@ -70,3 +70,4 @@ nav {
     }
   }
 }
+

@@ -3,6 +3,7 @@ import { DataContext } from "../../components/layout/Layout"
 
 import AllProducts from "../../components/Product/AllProducts/index";
 import * as S from "../../App.styles"
+
 import CableIcon from "../../assets/interface/categories/icons8-audio-cable-96.png";
 import LaptopIcon from "../../assets/interface/categories/icons8-laptop-96.png";
 import SneakerIcon from "../../assets/interface/categories/icons8-sneakers-96.png";
@@ -16,14 +17,16 @@ function Home() {
   return (
     <S.PageContainer>
       <AllProducts products={products} onFilter={filteredProducts}/>
-        <S.Category>
+        <S.AsideFeature>
+          <div className="img-box">
           <img src={ElectricalIcon} alt="Electrical category" />
           <img src={ClothesIcon} alt="clothes category" />
           <img src={CableIcon} alt="cable category" />
           <img src={LaptopIcon} alt="laptop category" />
           <img src={SneakerIcon} alt="sneaker category" />
           <img src={JewelryIcon} alt="jewelry category" />
-        </S.Category>
+          </div>
+        </S.AsideFeature>
       </S.PageContainer>
   );
 }

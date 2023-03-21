@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 import Nav from "../Nav/index";
-import "./../../../../scss/components/header/header.scss";
+import "./../../../../scss/components/header/styles.scss";
 
 function Header() {
   return (
     <header>
       <Link to="/" className="logo element-border">
-        Merrno
+        <p>Merrno</p>
       </Link>
       <Nav/>
     </header>
