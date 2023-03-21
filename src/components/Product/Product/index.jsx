@@ -5,10 +5,6 @@ import styles from "../../../pages/product/Product.module.scss";
 import C from "../../../scss/modules/cards/Card.module.scss";
 import F from "../../../scss/modules/pageFeature/Feature.module.scss";
 
-import * as S from "../../../App.styles"
-import C from "../../../scss/modules/cards/Card.module.scss";
-import F from "../../../scss/modules/pageFeature/Feature.module.scss";
-
 import ProductPrice from "../PriceCalculation/index";
 import Breadcrumbs from "../../pages/Breadcrumbs/index";
 
@@ -33,6 +29,7 @@ function ProductFetch() {
         setProduct(json);
       } catch (err) {
         console.log(err);
+        setIsError(true)
       } finally {
         setIsLoading(false);
       }
