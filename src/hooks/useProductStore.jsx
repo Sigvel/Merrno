@@ -11,7 +11,8 @@ export const useProductStore = create((set) => ({
       let newProducts;
       if (productIndex !== -1) {
         newProducts = state.products.map((p, index) => 
-          index === productIndex ? { ...p, quantity: p.quantity + 1 } : p
+          index === productIndex ? { ...p, quantity: p.quantity + 1,
+          discountedPrice: p.discountedPrice + p.discountedPrice/p.quantity } : p
       );
       } else {
         newProducts = [...state.products, { ...product, quantity: 1 }];
