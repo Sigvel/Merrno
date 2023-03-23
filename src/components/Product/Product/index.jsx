@@ -1,17 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import ProductPrice from "../PriceCalculation/index";
+import Breadcrumbs from "../../pages/Breadcrumbs/index";
+import { useStore } from "../../../hooks/useProductStore";
+
 import * as S from "../../../App.styles";
 import styles from "../../../pages/product/Product.module.scss";
 import C from "../../../scss/modules/cards/Card.module.scss";
 import F from "../../../scss/modules/pageFeature/Feature.module.scss";
 
-import ProductPrice from "../PriceCalculation/index";
-import Breadcrumbs from "../../pages/Breadcrumbs/index";
-
 const url = "https://api.noroff.dev/api/v1/online-shop/";
 
 function ProductFetch() {
+  const { addToCart } = useStore();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const [isError, setIsError] = useState(null);
@@ -46,7 +48,10 @@ function ProductFetch() {
     return <div>Error...</div>;
   }
 
-  console.log(product);
+  function addToCartButton() {
+    addToCart(product);
+  }
+
   return (
     <div>
       <h1>{product.title}</h1>
@@ -61,7 +66,7 @@ function ProductFetch() {
           <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
 
           <div>
-            <S.Button>Add to cart</S.Button>
+            <S.Button onClick={addToCartButton}>Add to cart</S.Button>
           </div>
         </S.Card>
         <S.Card className={C.bigCard}>
