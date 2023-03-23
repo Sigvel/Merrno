@@ -23,8 +23,8 @@ function ProductCart() {
                 <button type="button" onClick={() => increment(product.id)}>
                   +
                 </button>
-                <div>1</div>
-                <button type="button" onClick={() => decrement(product.id)}>
+                <div>{product.quantity}</div>
+                <button type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
                   -
                 </button>
               </div>
