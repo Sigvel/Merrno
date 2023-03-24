@@ -85,11 +85,11 @@ function useStore() {
     console.log("Cart cleared");
   }
 
-  function getCartTotal() {
-    return products.reduce((total, product) => total + product.discountedPrice * product.length, 0);
+  function getCartQuantity() {
+    return products.reduce((total, product) => total + product.quantity, 0);
   }
 
-  return { addToCart, removeFromCart, clearCart, getCartTotal, increment, decrement };
+  return { addToCart, removeFromCart, clearCart, getCartQuantity, increment, decrement };
 }
 
 export { useStore };
