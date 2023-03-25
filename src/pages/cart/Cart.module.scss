@@ -1,0 +1,21 @@
+.contentWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .cartHero {
+    display: flex;
+    justify-content: space-between;
+    
+    div {
+      display: none;
+    // display: flex;
+    // gap: 1rem;
+    }
+  }
+
+  .checkout {
+display: flex;
+gap: 3rem;
+  }
+}
+
