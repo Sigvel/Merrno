@@ -26,7 +26,7 @@ export const useProductStore = create((set) => ({
     set((state) => {
       const newProducts = state.products.map((product) => (product.id === id ? { ...product, 
         quantity: product.quantity + 1, 
-        discountedPrice: (product.quantity + 1)* product.discountedPrice/product.quantity} : product));
+        discountedPrice: (product.quantity + 1) * product.discountedPrice / product.quantity } : product));
       saveLocalStorage(newProducts);
       return { products: newProducts };
     }),
@@ -85,11 +85,15 @@ function useStore() {
     console.log("Cart cleared");
   }
 
+  function getCartTotal() {
+    return products.reduce((total, product) => total + product.price * product.quantity, 0);
+  }
+
   function getCartQuantity() {
     return products.reduce((total, product) => total + product.quantity, 0);
   }
 
-  return { addToCart, removeFromCart, clearCart, getCartQuantity, increment, decrement };
+  return { addToCart, removeFromCart, clearCart, getCartQuantity, getCartTotal, increment, decrement };
 }
 
 export { useStore };
