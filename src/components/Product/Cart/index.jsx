@@ -18,8 +18,10 @@ function ProductCart() {
               <h3>{product.title}</h3>
               {/* <p>{product.description}</p> */}
             </div>
-            <div>
-              <div>
+
+            <section className={styles.productInfo}>
+
+              <div className={styles.buttonBox}>
                 <button type="button" onClick={() => increment(product.id)}>
                   +
                 </button>
@@ -28,14 +30,17 @@ function ProductCart() {
                   -
                 </button>
               </div>
-              <p>price</p>
-              <p>{product.discountedPrice}</p>
-              <button type="button" onClick={() => removeFromCart(product.id)}>
-                X
-              </button>
-            </div>
+
+              <div className={styles.productCartDetails}>
+                <p>{Math.ceil(product.discountedPrice)},-</p>
+                <button type="button" onClick={() => removeFromCart(product.id)}>
+                  X
+                </button>
+              </div>
+
+            </section>
           </S.Card>
-        )
+        );
       })}
     </>
   );
