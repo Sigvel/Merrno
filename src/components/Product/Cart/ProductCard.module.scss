@@ -1,0 +1,31 @@
+.productCard {
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem;
+  }
+
+  .imgBox {
+    width: 8rem;
+    img {
+      height: 7rem;
+      object-fit: cover;
+
+    }
+  }
+  .productInfo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 86%;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .buttonBox {
+    display: flex;
+  }
+
+  .productCartDetails {
+    display: flex;
+    gap: 1.8rem;
+  }
