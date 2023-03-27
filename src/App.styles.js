@@ -144,7 +144,7 @@ export const Card = styled.div`
 
 export const Button = styled.button`
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: var(--font-semibold);
   padding: 0.5rem 1.5rem;
   border-style: none;
