@@ -9,6 +9,11 @@
   @media (min-width: 780px) {
     inset: 5.3rem 0.7rem 7rem 0.7rem;
   }
+
+  @media (min-width: 1120px) {
+    width: 74.5%;
+    margin: 0 auto;
+  }
 }
 
 .search-result {

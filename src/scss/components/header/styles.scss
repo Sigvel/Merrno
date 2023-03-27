@@ -5,6 +5,11 @@ header {
   inset: auto 0.5rem;
   background: #2d3250;
 
+  @media (min-width: 1120px) {
+    width: 75%;
+    margin: 0 auto;
+  }
+
   li,
   a,
   label {
