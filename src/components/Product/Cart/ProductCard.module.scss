@@ -1,31 +1,106 @@
 .productCard {
-  justify-content: space-between;
   gap: 1.5rem;
   padding: 1rem;
+  @media(min-width: 530px) {
+    display: flex;
   }
+}
 
-  .imgBox {
-    width: 8rem;
+.imgBox {
+  width: 8rem;
+  img {
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+}
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  @media (min-width: 440px) {
+    justify-content: flex-end;
+    gap: 4.5rem;
+  }
+}
+
+.buttonBox {
+  display: flex;
+
+  .btnLeft,
+  .btnRight {
+    border: none;
+    background: #f8b179;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
     img {
-      height: 7rem;
-      object-fit: cover;
-
+      width: 1rem;
+      margin: 0rem 0.4rem;
     }
   }
-  .productInfo {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    width: 86%;
-    margin: 0 auto;
-    justify-content: space-between;
+
+  .btnLeft {
+    border-radius: 2rem 0rem 0rem 2rem;
   }
 
-  .buttonBox {
-    display: flex;
+  .btnRight {
+    border-radius: 0rem 2rem 2rem 0rem;
   }
 
-  .productCartDetails {
-    display: flex;
-    gap: 1.8rem;
+  div {
+    width: 3.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    background: #2d3250;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   }
+
+  @media (min-width: 440px) {
+  }
+}
+
+.productCartDetails {
+  display: flex;
+  gap: 1.8rem;
+
+  @media (min-width: 440px) {
+    gap: 0rem;
+    margin-right: 1.5rem;
+
+    p {
+      width: 9.5rem;
+    }
+  }
+}
+
+.imgTitleWrap {
+  display: flex;
+  margin-bottom: 1rem;
+  figure {
+    margin-right: 0.5rem;
+  }
+  @media (min-width: 440px) {
+margin-bottom: 0;
+  }
+
+  @media (min-width: 530px) {
+    flex-basis: 100%;
+  }
+}
+
+.deleteButton {
+  width: 2rem;
+  border-radius: 1rem;
+  border: none;
+  background: #f8b179;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  :hover {
+    box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
+  }
+  img {
+    width: 2rem;
+  }
+}
