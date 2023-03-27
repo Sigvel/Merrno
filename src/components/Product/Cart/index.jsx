@@ -1,4 +1,8 @@
 import { useProductStore, useStore } from "../../../hooks/useProductStore";
+import DeleteImg from "../../../assets/interface/navigation/icons8-multiply-64.png";
+import Increment from "../../../assets/interface/navigation/icons8-plus-math-30.png"
+import Decrement from "../../../assets/interface/navigation/icons8-subtract-30.png"
+
 import * as S from "../../../App.styles";
 import styles from "./ProductCard.module.scss";
 
@@ -11,7 +15,7 @@ function ProductCart() {
       {products.map((product) => {
         return (
           <S.Card key={product.id} className={styles.productCard}>
-            <div>
+            <div className={styles.imgTitleWrap}>
               <figure className={styles.imgBox}>
                 <img src={product.imageUrl} alt={product.title} />
               </figure>
@@ -22,19 +26,19 @@ function ProductCart() {
             <section className={styles.productInfo}>
 
               <div className={styles.buttonBox}>
-                <button type="button" onClick={() => increment(product.id)}>
-                  +
+                <button className={styles.btnLeft} type="button" onClick={() => increment(product.id)}>
+                  <img src={Increment} alt="+"></img>
                 </button>
                 <div>{product.quantity}</div>
-                <button type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
-                  -
+                <button className={styles.btnRight} type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
+                <img src={Decrement} alt="-"></img>
                 </button>
               </div>
 
               <div className={styles.productCartDetails}>
-                <p>{Math.ceil(product.discountedPrice)},-</p>
-                <button type="button" onClick={() => removeFromCart(product.id)}>
-                  X
+                <p>{Math.ceil(product.discountedPrice)} kr</p>
+                <button className={styles.deleteButton} type="button" onClick={() => removeFromCart(product.id)}>
+                <img src={DeleteImg} alt="Delete button" /> 
                 </button>
               </div>
 
