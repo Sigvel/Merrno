@@ -53,6 +53,14 @@
       }
     }
   }
+
+  @media (min-width: 1120px) {
+    figure {
+      img {
+        height: 12vw;
+      }
+    }
+  }
 }
 
 .bigCard {
