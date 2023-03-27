@@ -22,8 +22,8 @@ export const PageContainer = styled.div`
     border-bottom: none;
     padding: 0.5rem;
     @media (min-width: 1120px) {
-    width: 75%;
-    margin: 0 auto;
+      width: 75%;
+      margin: 0 auto;
     }
   }
 
@@ -214,10 +214,20 @@ export const SearchBar = styled.div`
     }
 
     img {
-      width: 7.5rem;
+      width: 7rem;
+      background: none;
       margin: 0rem 1.1rem;
-      padding: 0.2rem 2.3rem;
-      right: 23rem;
+      padding: 0rem 2.1rem;
+      right: 21.5rem;
+
+      @media (min-width: 780px) {
+        width: 7rem;
+        background: none;
+        margin: 0rem 1.1rem;
+        padding: 0rem 2.1rem;
+        right: 21.5rem;
+        top: 1.3rem;
+      }
     }
   }
 `;
@@ -231,7 +241,7 @@ export const SearchIcon = styled.div`
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background: #f8b179;
     cursor: pointer;
-    
+
     :hover {
       box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
     }
