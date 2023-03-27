@@ -13,10 +13,10 @@ header {
 
   nav {
     display: flex;
-  
+
     ul {
       display: flex;
-  
+
       li {
         text-align: center;
       }
@@ -42,6 +42,21 @@ header {
 
 .full-width {
   width: 100%;
+}
+
+.cart-qnty {
+  position: absolute;
+  inset: auto 0.6rem 1.3rem auto;
+  font-size: 1.2rem;
+  background: red;
+  border-radius: 50%;
+  width: 1.5rem;
+
+  @media (min-width: 530px) {
+    inset: auto 1.5rem 2rem auto;
+    font-size: 1.5rem;
+    width: 2rem;
+  }
 }
 
 @media (min-width: 530px) {
@@ -70,4 +85,3 @@ header {
     }
   }
 }
-
