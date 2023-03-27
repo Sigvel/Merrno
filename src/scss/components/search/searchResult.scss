@@ -1,7 +1,10 @@
 .scroll-box {
   position: fixed;
-  inset: 7.6rem 0.7rem 9rem 0.7rem;
+  inset: 8.1rem 0.7rem 9rem 0.7rem;
   background: #2d3250;
+  height: 51vh;
+  border-bottom: solid 0.2rem;
+  border-color: #424669;
   @media (min-width: 530px) {
     inset: 9.9rem 0.7rem 7rem 0.7rem;
   }
@@ -17,14 +20,15 @@
 }
 
 .search-result {
-  height: 80.4vh;
+  height: 50vh;
   width: 95%;
   margin: 0 auto;
   overflow-x: scroll;
   li {
     display: flex;
+    gap: 1rem;
     align-items: center;
-    height: 10%;
+    padding: 0.5rem;
     background: #424669;
     margin: 0.5rem;
     border-radius: 0.5rem;
@@ -34,23 +38,12 @@
       img {
         height: 100%;
         width: 100%;
-        object-fit: scale-down;
+        object-fit: cover;
+        border-radius: 0.5rem;
       }
     }
-  }
-
-  @media (min-width: 530px) {
-    height: 74.5vh;
-    li {
-        height: 13%;
-        figure {
-          height: 8rem;
-          width: 8rem;
-        }
+    h2 {
+      width: 20rem;
     }
-  }
-
-  @media (min-width: 780px) {
-    height: 79.5vh;
   }
 }
