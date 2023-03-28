@@ -68,9 +68,9 @@
   figure {
     width: 90%;
     margin: 0 auto;
-    padding-top: 1rem;
+    padding-top: 5%;
     img {
-      height: 55vw;
+      height: 80vw;
       border-radius: 1rem;
       object-fit: cover;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -82,7 +82,18 @@
 
   @media (min-width: 530px) {
     flex: 1;
+    figure {
+      img {
+        height: 55vw;
+      }
+    }
   }
+
+  @media (min-width: 780px) {
+figure img {
+  height: 35rem;
+      }
+}
 
   h2, h3, p {
     margin: 0 auto;
