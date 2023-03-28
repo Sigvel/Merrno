@@ -12,6 +12,7 @@ function Cart() {
   return (
     <S.PageContainer>
       <h1>Cart</h1>
+      <div className={styles.pageWrap}>
       <div className={styles.contentWrap}>
         <S.Breadcrumb />
         <section className={styles.cartHero}>
@@ -27,7 +28,6 @@ function Cart() {
 
         <section className={styles.checkout}>
           <div>Total: {Math.round(total)} kr</div>
-          <S.Button onclick={() => handleCheckout()}>Checkout</S.Button>
         </section>
       </div>
       <S.AsideFeature className={F.featureButton}>
@@ -43,9 +43,10 @@ function Cart() {
           <input name="your-country-code" type="text" placeholder="Country Code" />
         </form>
         <div>
-          <S.Button type="button">Show form</S.Button>
+        <S.Button onclick={() => handleCheckout()}>Checkout</S.Button>
         </div>
       </S.AsideFeature>
+      </div>
     </S.PageContainer>
   );
 }

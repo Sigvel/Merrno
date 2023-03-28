@@ -1,3 +1,15 @@
+.pageWrap {
+  @media (min-width: 780px) {
+    width: 70rem;
+    margin: 0 auto;
+  }
+  @media (min-width: 1120px) {
+    width: 90rem;
+    display: flex;
+    gap: 2rem;
+  }
+}
+
 .contentWrap {
   display: flex;
   flex-direction: column;
@@ -33,11 +45,12 @@
   }
 }
 
+aside {
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
 aside h2 {
-  display: none;
-  @media (min-width: 1120px) {
-    display: block;
-    font-size: 2rem;
-    text-align: center;
-  }
+  text-align: center;
+  font-size: 2rem;
 }
