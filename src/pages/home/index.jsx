@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { DataContext } from "../../components/layout/Layout"
 
 import AllProducts from "../../components/Product/AllProducts/index";
-import * as S from "../../App.styles"
+import * as S from "../../App.styles";
+import styles from "./Home.module.scss";
 
 import CableIcon from "../../assets/interface/categories/icons8-audio-cable-96.png";
 import LaptopIcon from "../../assets/interface/categories/icons8-laptop-96.png";
@@ -16,8 +17,9 @@ function Home() {
 
   return (
     <S.PageContainer>
+      <div className={styles.pageWrapper}>
       <AllProducts products={products} onFilter={filteredProducts}/>
-        <S.AsideFeature>
+        <S.AsideFeature className={styles.categoriesBox}>
           <div className="img-box">
           <img src={ElectricalIcon} alt="Electrical category" />
           <img src={ClothesIcon} alt="clothes category" />
@@ -27,6 +29,7 @@ function Home() {
           <img src={JewelryIcon} alt="jewelry category" />
           </div>
         </S.AsideFeature>
+        </div>
       </S.PageContainer>
   );
 }
