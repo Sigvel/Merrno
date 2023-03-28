@@ -104,11 +104,6 @@ function ProductFetch() {
             );
           })}
         </section>
-        <div>
-          <S.Button type="button" className="show-btn">
-            Show form
-          </S.Button>
-        </div>
       </S.AsideFeature>
     </div>
   );
