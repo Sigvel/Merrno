@@ -32,9 +32,16 @@
     background: #424669;
     margin: 0.5rem;
     border-radius: 0.5rem;
+    font-size: 1.1rem;
+    @media (min-width: 530px) {
+      font-size: 1.5rem;
+    }
     figure {
-      height: 7rem;
-      width: 7rem;
+      height: 6rem;
+      width: 8rem;
+      @media (min-width: 530px) {
+        height: 7rem;
+      }
       img {
         height: 100%;
         width: 100%;
