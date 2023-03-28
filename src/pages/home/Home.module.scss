@@ -1,5 +1,36 @@
 .feature {
-    display: grid;
-    grid-template-rows: repeat(2, minmax(auto, 65px));
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-rows: repeat(2, minmax(auto, 65px));
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.pageText {
+  inset: auto 0.5rem 6rem !important;
+
+  @media (min-width: 530px) {
+    inset: auto 0.5rem 7rem !important;
+  }
+
+  @media (min-width: 1120px) {
+    inset: auto 0.5rem 0rem !important;
+  }
+}
+
+.categoriesBox {
+  position: fixed;
+  @media (min-width: 1120px) {
+    position: initial;
+  }
+}
+
+.pageWrapper {
+  @media (min-width: 780px) {
+    display: flex;
+    gap: 1rem;
+    width: 70rem;
+    margin: 0 auto;
+  }
+  @media (min-width: 1120px) {
+    width: 80rem;
+  }
 }

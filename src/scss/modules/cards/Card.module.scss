@@ -54,10 +54,18 @@
     }
   }
 
+  @media (min-width: 780px) {
+    figure {
+      img {
+        height: 15rem;
+      }
+    }
+  }
+
   @media (min-width: 1120px) {
     figure {
       img {
-        height: 12vw;
+        height: 13rem;
       }
     }
   }
