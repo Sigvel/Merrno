@@ -1,9 +1,17 @@
-.productPage {
+.pageWrapper {
+    margin: 0 auto;
+  max-width: 65rem;
+}
+
+.contentWrapper {
     display: block;
     justify-content: center;
 }
 
 .container {
+    margin: 0 auto;
+    max-width: 65rem;
+
     @media (min-width: 530px) {
         display: flex;
         gap: 1rem;

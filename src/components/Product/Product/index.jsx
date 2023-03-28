@@ -53,7 +53,7 @@ function ProductFetch() {
   }
 
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       <h1>{product.title}</h1>
       <Breadcrumbs />
       <div className={styles.container}>

@@ -7,7 +7,7 @@ function Product() {
     let params = useParams();
     
     return (
-    <S.PageContainer className={styles.productPage}>
+    <S.PageContainer className={styles.contentWrapper}>
       <ProductFetch id={params.id} />
     </S.PageContainer>
     )
