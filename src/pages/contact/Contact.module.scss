@@ -25,7 +25,7 @@
 }
 
 .contentWrapper {
-  @media (min-width: 1120px) {
+  @media (min-width: 780px) {
     display: flex;
     flex-direction: column;
     width: 70rem;
@@ -39,7 +39,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  margin-bottom: 1.5rem;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -52,6 +51,9 @@
   p {
     padding-bottom: 2rem;
     padding-right: 1rem;
+    @media (min-width: 780px) {
+      max-width: 70%;
+    }
   }
 
   @media (min-width: 1120px) {
@@ -69,7 +71,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  margin-bottom: 1.5rem;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -87,7 +88,7 @@
 
 .contact {
   margin-top: 2rem;
-
+  padding-bottom: 2rem;
   h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -99,16 +100,21 @@
 }
 
 aside form {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
   width: 85%;
   margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 
   :focus {
     outline: solid #2d3250;
     box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(66, 70, 105, 0.5) -3px -3px 6px 1px inset;
+  }
+  ::placeholder {
+    color: white;
   }
   input,
   textarea {
@@ -124,11 +130,5 @@ aside form {
 
   textarea {
     height: 20rem;
-  }
-
-  @media (min-width: 1120px) {
-    display: flex;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
   }
 }

@@ -74,11 +74,6 @@ function Contact() {
               <S.Button>Submit</S.Button>
             </div>
           </form>
-          <div>
-            <S.Button type="button" className="show-btn">
-              Show form
-            </S.Button>
-          </div>
         </S.AsideFeature>
       </div>
     </S.PageContainer>
