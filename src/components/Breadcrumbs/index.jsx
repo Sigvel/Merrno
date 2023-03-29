@@ -1,4 +1,4 @@
-import * as S from "../../../App.styles";
+import * as S from "../../App.styles";
 
 import { Link, useLocation } from "react-router-dom";
 
