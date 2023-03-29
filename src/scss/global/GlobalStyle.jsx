@@ -58,6 +58,11 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     object-fit: center;
   }
+
+  .error {
+    background: lightcoral;
+    color: red;
+  }
 `;
 
 export default GlobalStyle;
