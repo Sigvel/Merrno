@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { DataContext } from "../layout/Layout";
+import { Link } from "react-router-dom";
 
 import SearchIcon from "../../assets/interface/navigation/icons8-search-48.png";
 import * as S from "../../App.styles";
@@ -32,7 +33,6 @@ const ComponentWithInput = ({ onClick }) => {
   const handleSearch = (e) => {
     handleFilter(e.target.value);
   };
-
   return (
     <>
       <S.SearchBar>
@@ -46,6 +46,7 @@ const ComponentWithInput = ({ onClick }) => {
         <ol className="search-result">
           {filteredProducts.map((product) => {
             return (
+              <Link to={`/product/${product.id}`}>
               <li key={product.id}>
                 <figure>
                   <img src={product.imageUrl} alt={product.title} />
@@ -53,6 +54,7 @@ const ComponentWithInput = ({ onClick }) => {
                 <h2>{product.title}</h2>
                 <p>Price: {product.discountedPrice},-</p>
               </li>
+              </Link>
             );
           })}
         </ol>

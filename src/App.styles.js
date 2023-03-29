@@ -14,20 +14,23 @@ export const PageContainer = styled.div`
     text-transform: uppercase;
     font-weight: var(--font-bold);
     position: fixed;
-    inset: auto 0.5rem 6rem;
+    inset: auto 0.5rem 0rem;
     background: #2d3250;
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 0.5rem;
     border: solid 0.1rem #676f9d;
     border-bottom: none;
     padding: 0.5rem;
+    @media (min-width: 1120px) {
+      width: 75%;
+      margin: 0 auto;
+    }
   }
 
   @media (min-width: 530px) {
     padding: 11rem 1rem 10rem;
     h1 {
       font-size: 2.5rem;
-      inset: auto 0.5rem 7rem;
     }
   }
 
@@ -38,6 +41,8 @@ export const PageContainer = styled.div`
   @media (min-width: 1120px) {
     display: flex;
     gap: 1.5rem;
+    width: 75%;
+    margin: 0 auto;
 
     h1 {
       font-size: 3rem;
@@ -76,7 +81,6 @@ export const AsideFeature = styled.aside`
   overflow-x: scroll;
   border: 0.1rem solid #676f9d;
   background: #2d3250;
-  position: fixed;
   inset: auto 0.5rem 0;
 
   .img-box {
@@ -144,7 +148,7 @@ export const Card = styled.div`
 
 export const Button = styled.button`
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: var(--font-semibold);
   padding: 0.5rem 1.5rem;
   border-style: none;
@@ -198,6 +202,7 @@ export const SearchBar = styled.div`
     background: #f8b179;
     position: absolute;
     right: 13.5rem;
+    cursor: pointer;
   }
 
   @media (min-width: 530px) {
@@ -208,10 +213,20 @@ export const SearchBar = styled.div`
     }
 
     img {
-      width: 7.5rem;
+      width: 7rem;
+      background: none;
       margin: 0rem 1.1rem;
-      padding: 0.2rem 2.3rem;
-      right: 23rem;
+      padding: 0rem 2.1rem;
+      right: 21.5rem;
+
+      @media (min-width: 780px) {
+        width: 7rem;
+        background: none;
+        margin: 0rem 1.1rem;
+        padding: 0rem 2.1rem;
+        right: 21.5rem;
+        top: 1.3rem;
+      }
     }
   }
 `;
@@ -225,7 +240,7 @@ export const SearchIcon = styled.div`
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background: #f8b179;
     cursor: pointer;
-    
+
     :hover {
       box-shadow: rgba(248, 177, 121, 0.35) 0px 5px 15px;
     }

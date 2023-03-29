@@ -22,7 +22,7 @@ function Nav() {
         <li className="element-border">
           <Link to="/cart">
             <img src={CartIcon} alt="Cart Icon" />
-            <div>{quantity}</div>
+            <div className="cart-qnty">{quantity}</div>
           </Link>
         </li>
       </ul>

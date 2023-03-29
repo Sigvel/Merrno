@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import ProductPrice from "../PriceCalculation/index";
-import Breadcrumbs from "../../pages/Breadcrumbs/index";
+import Breadcrumbs from "../../Breadcrumbs/index";
 import { useStore } from "../../../hooks/useProductStore";
 
 import * as S from "../../../App.styles";
@@ -53,7 +53,7 @@ function ProductFetch() {
   }
 
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       <h1>{product.title}</h1>
       <Breadcrumbs />
       <div className={styles.container}>
@@ -104,11 +104,6 @@ function ProductFetch() {
             );
           })}
         </section>
-        <div>
-          <S.Button type="button" className="show-btn">
-            Show form
-          </S.Button>
-        </div>
       </S.AsideFeature>
     </div>
   );
