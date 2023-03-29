@@ -1,3 +1,5 @@
+import "../../validation/index";
+
 import styles from "./Contact.module.scss";
 import * as S from "../../App.styles";
 import F from "../../scss/modules/pageFeature/Feature.module.scss";
@@ -61,15 +63,15 @@ function Contact() {
         </S.Card>
 
         <S.AsideFeature className={F.featureButton}>
-          <form>
-            <label></label>
-            <input type="email" name="your-email" placeholder="Email" />
-            <label></label>
-            <input type="text" name="your-full-name" placeholder="Full name" />
-            <label></label>
-            <input type="text" name="your-subject" placeholder="subject" />
-            <label></label>
-            <textarea name="your-message" placeholder="Message"></textarea>
+          <form id="contact-form">
+            <label id="your-email"></label>
+            <input type="email" name="your-email" placeholder="Email" required/>
+            <label id="your-full-name"></label>
+            <input type="text" name="your-full-name" minLength="3" placeholder="Full name" required/>
+            <label id="your-subject"></label>
+            <input type="text" name="your-subject" minLength="3" placeholder="subject" />
+            <label id="your-message"></label>
+            <textarea name="your-message" placeholder="Message" minLength="3" required></textarea>
             <div>
               <S.Button>Submit</S.Button>
             </div>

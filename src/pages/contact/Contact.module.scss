@@ -25,12 +25,13 @@
 }
 
 .contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
   @media (min-width: 780px) {
-    display: flex;
-    flex-direction: column;
     width: 70rem;
     margin: 0 auto;
-    gap: 2rem;
   }
 }
 
@@ -123,7 +124,10 @@ aside form {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-style: none;
     border: 0.1rem solid #676f9d;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
+    @media (min-width: 530px) {
+      font-size: 1.7rem;
+    }
     padding: 1rem;
     border-radius: 1rem;
   }
