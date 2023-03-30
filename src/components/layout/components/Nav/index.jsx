@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useStore } from "../../../../hooks/useProductStore";
+import { useProductStore } from "../../../../hooks/useProductStore";
 
 import ContactIcon from "../../../../assets/interface/navigation/icons8-online-support-48.png";
 import CartIcon from "../../../../assets/interface/navigation/icons8-shopping-bag-48.png";
@@ -7,8 +7,7 @@ import CartIcon from "../../../../assets/interface/navigation/icons8-shopping-ba
 import SearchBar from "../../../Search";
 
 function Nav() {
-  const { getCartQuantity } = useStore();
-  const quantity = getCartQuantity();
+  const cartQuantity = useProductStore((state) => state.cartQuantity);
 
   return (
     <nav>
@@ -22,7 +21,7 @@ function Nav() {
         <li className="element-border">
           <Link to="/cart">
             <img src={CartIcon} alt="Cart Icon" />
-            <div className="cart-qnty">{quantity}</div>
+            <div className="cart-qnty">{cartQuantity}</div>
           </Link>
         </li>
       </ul>
