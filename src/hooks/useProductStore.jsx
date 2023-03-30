@@ -3,6 +3,8 @@ import { saveLocalStorage, getLocalStorage } from "../components/LocalStorage";
 // product store
 export const useProductStore = create((set) => ({
   products: getLocalStorage(),
+  order: [],
+  cartQuantity: 0,
 
   // Add products.
   addProduct: (product) =>
@@ -11,7 +13,7 @@ export const useProductStore = create((set) => ({
       let newProducts;
       if (productIndex !== -1) {
         newProducts = state.products.map((p, index) =>
-          index === productIndex ? { ...p, quantity: p.quantity + 1, 
+          index === productIndex ? { ...p, quantity: p.quantity + 1,
             discountedPrice: p.discountedPrice + p.discountedPrice / p.quantity,
             price: p.price + p.price / p.quantity } : p
         );
@@ -19,14 +21,14 @@ export const useProductStore = create((set) => ({
         newProducts = [...state.products, { ...product, quantity: 1 }];
       }
       saveLocalStorage(newProducts);
-      return { products: newProducts };
+      return { products: newProducts, cartQuantity: state.cartQuantity + 1 };
     }),
 
   // increment quantity
   incrementQuantity: (id) =>
     set((state) => {
       const newProducts = state.products.map((product) =>
-        product.id === id ? { ...product, quantity: product.quantity + 1, 
+        product.id === id ? { ...product, quantity: product.quantity + 1,
         discountedPrice: ((product.quantity + 1) * product.discountedPrice) / product.quantity,
         price: ((product.quantity + 1) * product.price) / product.quantity } : product
       );
@@ -34,7 +36,7 @@ export const useProductStore = create((set) => ({
 
       saveLocalStorage(newProducts);
 
-      return { products: newProducts };
+      return { products: newProducts, cartQuantity: state.cartQuantity + 1 };
     }),
 
   // decrement quantity
@@ -42,37 +44,39 @@ export const useProductStore = create((set) => ({
     set((state) => {
       const newProducts = state.products.map((product) =>
         product.id === id && product.quantity > 0
-          ? { ...product, quantity: Math.max(0, product.quantity - 1), 
+          ? { ...product, quantity: Math.max(0, product.quantity - 1),
             discountedPrice: (Math.max(0, product.quantity - 1) * product.discountedPrice) / product.quantity,
             price: (Math.max(0, product.quantity - 1) * product.price) / product.quantity
          } : { ...product }
       );
 
       saveLocalStorage(newProducts);
-      return { products: newProducts };
+      return { products: newProducts, cartQuantity: state.cartQuantity - 1 };
     }),
 
   // Remove product
   removeProduct: (id) =>
     set((state) => {
+      const product = state.products.find((p) => p.id === id);
+      const newCartQuantity = state.cartQuantity - (product ? product.quantity : 0);
       const newProducts = state.products.filter((product) => product.id !== id);
+
       saveLocalStorage(newProducts);
-      return { products: newProducts };
+      return { products: newProducts, cartQuantity: newCartQuantity};
     }),
 
   // Clear products and amount.
   checkout: () =>
     set((state) => {
       const totalCost = state.products.reduce((total, product) => total + product.discountedPrice, 0)
-      const order = {
+      const orderedProducts = {
         products: state.products,
         totalCost,
       }
-
       const newProducts = [];
       saveLocalStorage(newProducts);
 
-      return { products: newProducts, order };
+      return { order: orderedProducts, cartQuantity: 0 };
     }),
 }));
 
@@ -106,16 +110,12 @@ function useStore() {
   return products.reduce((total, product) => total + product.discountedPrice, 0);
   }
 
-  function getCartQuantity() {
-    return products.reduce((total, product) => total + product.quantity, 0);
-  }
-
   function cartCheckout() {
     checkout();
     console.log(products);
   }
 
-  return { addToCart, removeFromCart, cartCheckout, getCartQuantity, getCartTotal, increment, decrement};
+  return { addToCart, removeFromCart, cartCheckout, getCartTotal, increment, decrement};
 }
 
 export { useStore };
