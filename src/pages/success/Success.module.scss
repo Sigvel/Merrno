@@ -3,6 +3,11 @@
     text-align: center;
   }
 
+  @media (min-width: 1120px) {
+    width: 75rem;
+  margin: 0 auto;
+  }
+
   .orderNumber {
     width: 95%;
     margin: 0 auto;
@@ -39,7 +44,7 @@
       margin-top: 2rem;
     }
   }
-  
+
   .buttonWrapper {
     margin-top: 1rem;
   }
