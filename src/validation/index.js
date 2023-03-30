@@ -1,5 +1,6 @@
 import * as c from "./form/index";
-
-c.form.addEventListener("submit", (e) => {
-  c.contact(e);
-});
+if (Location.pathname === "/contact") {
+  c.form.addEventListener("submit", (e) => {
+    c.contact(e);
+  });
+}

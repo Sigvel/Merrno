@@ -7,13 +7,14 @@ export const useProductStore = create((set) => ({
   // Add products.
   addProduct: (product) =>
     set((state) => {
-      const productIndex = state.products.findIndex(p => p.id === product.id);
+      const productIndex = state.products.findIndex((p) => p.id === product.id);
       let newProducts;
       if (productIndex !== -1) {
-        newProducts = state.products.map((p, index) => 
-          index === productIndex ? { ...p, quantity: p.quantity + 1,
-          discountedPrice: p.discountedPrice + p.discountedPrice/p.quantity } : p
-      );
+        newProducts = state.products.map((p, index) =>
+          index === productIndex ? { ...p, quantity: p.quantity + 1, 
+            discountedPrice: p.discountedPrice + p.discountedPrice / p.quantity,
+            price: p.price + p.price / p.quantity } : p
+        );
       } else {
         newProducts = [...state.products, { ...product, quantity: 1 }];
       }
@@ -21,23 +22,32 @@ export const useProductStore = create((set) => ({
       return { products: newProducts };
     }),
 
-// increment quantity
+  // increment quantity
   incrementQuantity: (id) =>
     set((state) => {
-      const newProducts = state.products.map((product) => (product.id === id ? { ...product, 
-        quantity: product.quantity + 1, 
-        discountedPrice: (product.quantity + 1) * product.discountedPrice / product.quantity } : product));
+      const newProducts = state.products.map((product) =>
+        product.id === id ? { ...product, quantity: product.quantity + 1, 
+        discountedPrice: ((product.quantity + 1) * product.discountedPrice) / product.quantity,
+        price: ((product.quantity + 1) * product.price) / product.quantity } : product
+      );
+
+
       saveLocalStorage(newProducts);
+
       return { products: newProducts };
     }),
 
-// decrement quantity
+  // decrement quantity
   decrementQuantity: (id) =>
     set((state) => {
-      const newProducts = state.products.map((product) => (product.id === id && product.quantity > 0 ) ? 
-      { ...product, 
-        quantity: Math.max(0, product.quantity - 1), 
-        discountedPrice: (Math.max(0,(product.quantity - 1))) * product.discountedPrice/product.quantity} : {...product});
+      const newProducts = state.products.map((product) =>
+        product.id === id && product.quantity > 0
+          ? { ...product, quantity: Math.max(0, product.quantity - 1), 
+            discountedPrice: (Math.max(0, product.quantity - 1) * product.discountedPrice) / product.quantity,
+            price: (Math.max(0, product.quantity - 1) * product.price) / product.quantity
+         } : { ...product }
+      );
+
       saveLocalStorage(newProducts);
       return { products: newProducts };
     }),
@@ -50,14 +60,27 @@ export const useProductStore = create((set) => ({
       return { products: newProducts };
     }),
 
-  // Clear products and amount
-  clearCart: () => set({ products: [] }),
+  // Clear products and amount.
+  checkout: () =>
+    set((state) => {
+      const totalCost = state.products.reduce((total, product) => total + product.discountedPrice, 0)
+      const order = {
+        products: state.products,
+        totalCost,
+      }
+
+      const newProducts = [];
+      saveLocalStorage(newProducts);
+
+      return { products: newProducts, order };
+    }),
 }));
 
 function useStore() {
   const addProduct = useProductStore((state) => state.addProduct);
   const removeProduct = useProductStore((state) => state.removeProduct);
   const products = useProductStore((state) => state.products);
+  const checkout = useProductStore((state) => state.checkout);
   const incrementQuantity = useProductStore((state) => state.incrementQuantity);
   const decrementQuantity = useProductStore((state) => state.decrementQuantity);
 
@@ -68,12 +91,10 @@ function useStore() {
 
   function increment(id) {
     incrementQuantity(id);
-    console.log(products);
   }
 
   function decrement(id) {
     decrementQuantity(id);
-    console.log(products);
   }
 
   function removeFromCart(id) {
@@ -81,19 +102,20 @@ function useStore() {
     console.log(products);
   }
 
-  function clearCart() {
-    console.log("Cart cleared");
-  }
-
-  function getCartTotal() {
-    return products.reduce((total, product) => total + product.price * product.quantity, 0);
+  function getCartTotal() { 
+  return products.reduce((total, product) => total + product.discountedPrice, 0);
   }
 
   function getCartQuantity() {
     return products.reduce((total, product) => total + product.quantity, 0);
   }
 
-  return { addToCart, removeFromCart, clearCart, getCartQuantity, getCartTotal, increment, decrement };
+  function cartCheckout() {
+    checkout();
+    console.log(products);
+  }
+
+  return { addToCart, removeFromCart, cartCheckout, getCartQuantity, getCartTotal, increment, decrement};
 }
 
 export { useStore };

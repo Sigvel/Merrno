@@ -4,6 +4,7 @@ import Layout from "./components/layout/Layout.jsx";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Cart from "./pages/cart";
+import SuccessPage from "./pages/success"
 import Product from "./pages/product";
 import RouteNotFound from "./pages/error";
 import "./scss/styles.scss";
@@ -17,6 +18,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="cart/" element={<Cart />} />
+          <Route path="success/" element={<SuccessPage />} />
           <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>
