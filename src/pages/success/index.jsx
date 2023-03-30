@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { useProductStore } from "../../hooks/useProductStore";
 
 import * as S from "../../App.styles";
@@ -5,6 +7,9 @@ import styles from "./Success.module.scss";
 
 function Success() {
   const { products, totalCost } = useProductStore((state) => state.order);
+  const { clearCart } = useProductStore((state) => state.clearCart);
+
+  console.log(products);
   const orderNumber = Math.floor(Math.random() * 100000) + 100000;
 
   return (
@@ -27,7 +32,7 @@ function Success() {
             <p className={styles.total}>Total: {Math.round(totalCost)} kr</p>
           </div>
           <div className={styles.buttonWrapper}>
-            <S.Button>Back to shopping</S.Button>
+            <S.Button> <Link to="/" onClick={() => clearCart()}>Back to shopping</Link></S.Button>
           </div>
         </div>
       </div>
