@@ -73,11 +73,13 @@ export const useProductStore = create((set) => ({
         products: state.products,
         totalCost,
       }
-      const newProducts = [];
-      saveLocalStorage(newProducts);
+
+      localStorage.removeItem("items");
 
       return { order: orderedProducts, cartQuantity: 0 };
     }),
+
+    clearCart: () => set(() => ({ order: []})),
 }));
 
 function useStore() {
@@ -90,7 +92,6 @@ function useStore() {
 
   function addToCart(product) {
     addProduct(product);
-    console.log(products);
   }
 
   function increment(id) {
@@ -112,7 +113,6 @@ function useStore() {
 
   function cartCheckout() {
     checkout();
-    console.log(products);
   }
 
   return { addToCart, removeFromCart, cartCheckout, getCartTotal, increment, decrement};
