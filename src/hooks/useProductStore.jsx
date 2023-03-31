@@ -68,7 +68,7 @@ export const useProductStore = create((set) => ({
   // Clear products and amount.
   checkout: () =>
     set((state) => {
-      const totalCost = state.products.reduce((total, product) => total + product.discountedPrice, 0)
+      const totalCost = state.products.reduce((total, product) => total + product.discountedPrice, 0);
       const orderedProducts = {
         products: state.products,
         totalCost,
