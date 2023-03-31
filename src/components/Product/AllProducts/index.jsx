@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 import * as S from "../../../App.styles";
-// import styles from "../../../pages/home/Home.module.scss"
 import C from "../../../scss/modules/cards/Card.module.scss";
 import ProductPrice from "../PriceCalculation/index";
 // import Breadcrumbs from "./pages/BreadCrumb";
 
 function AllProducts({ products }) {
+  
   return (
     <S.Container>
       {/* <Breadcrumbs /> */}
