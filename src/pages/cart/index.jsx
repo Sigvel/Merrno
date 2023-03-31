@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import ProductCart from "../../components/Product/Cart";
-import { useStore } from "../../hooks/useProductStore";
+import { useStore, useProductStore } from "../../hooks/useProductStore";
 
 import * as S from "../../App.styles";
 import styles from "./Cart.module.scss";
@@ -9,14 +11,23 @@ import F from "../../scss/modules/pageFeature/Feature.module.scss";
 
 function Cart() {
   const { getCartTotal, cartCheckout } = useStore();
+  const products = useProductStore((state) => state.products);
   const total = getCartTotal();
+  console.log(products.length);
+  const notify = (message) => toast(message, { autoClose: 1000 });
 
   function checkoutButton() {
-    cartCheckout();
+    if (products.length === 0) {
+      notify("No items in cart");
+    } else {
+      cartCheckout();
+    }
   }
+
   return (
     <S.PageContainer>
       <h1>Cart</h1>
+      <ToastContainer />
       <div className={styles.pageWrap}>
         <div className={styles.contentWrap}>
           <S.Breadcrumb />
@@ -47,11 +58,19 @@ function Cart() {
             <label></label>
             <input name="your-country-code" type="text" placeholder="Country Code" />
           </form>
-          <div>
-            <S.Button onClick={() => checkoutButton()}>
-              <Link to={`/success`}>Checkout</Link>
-            </S.Button>
-          </div>
+          {products.length === 0 ? (
+            <div className={styles.toShoppingButton}>
+              <Link to="/">
+                <S.Button>Back to shopping</S.Button>
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <Link onClick={() => checkoutButton()} to="/success">
+                <S.Button>Checkout</S.Button>
+              </Link>
+            </div>
+          )}
         </S.AsideFeature>
       </div>
     </S.PageContainer>

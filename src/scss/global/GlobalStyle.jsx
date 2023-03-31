@@ -62,6 +62,15 @@ const GlobalStyle = createGlobalStyle`
   .error {
     background: lightcoral;
     color: red;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .success {
+    background: lightgreen;
+    color: green;
+    padding: 1rem;
+    border-radius: 0.5rem;
   }
 `;
 

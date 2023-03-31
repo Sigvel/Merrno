@@ -3,7 +3,49 @@
     text-align: center;
   }
 
-  .orderSummary {
+  @media (min-width: 1120px) {
+    width: 75rem;
+    margin: 0 auto;
+  }
 
+  .orderNumber {
+    width: 95%;
+    margin: 0 auto;
+    h2 {
+      font-weight: var(--font-semibold);
+      text-align: initial;
+    }
+  }
+
+  .orderSummary {
+    width: 95%;
+    margin: 0 auto;
+
+    h3 {
+      margin-top: 0.5rem;
+    }
+
+    h2 {
+      font-weight: var(--font-semibold);
+      text-align: initial;
+      margin-top: 2rem;
+    }
+
+    .ordersWrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .card {
+        padding: 1rem;
+      }
+    }
+    .total {
+      margin-top: 2rem;
+    }
+  }
+
+  .buttonWrapper {
+    margin-top: 1rem;
   }
 }
