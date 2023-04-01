@@ -91,7 +91,7 @@ export const useProductStore = create((set) => ({
       localStorage.removeItem("items");
       localStorage.removeItem("cartAmount");
 
-      return { order: orderedProducts, cartQuantity: 0 };
+      return { order: orderedProducts, products: [], cartQuantity: 0 };
     }),
 
     clearCart: () => set(() => ({ order: []})),
