@@ -90,7 +90,7 @@ const notify = () => toast("Item added to cart!", {autoClose: 500});
             </div>
           </section>
 
-          <section>
+          <section className={styles.productRating}>
             <h2>Rating</h2>
             <p>{product.rating} / 5</p>
           </section>
