@@ -63,6 +63,7 @@ function Contact() {
         </S.Card>
 
         <S.AsideFeature className={F.featureButton}>
+        <h2>Contact</h2>
           <form id="contact-form">
             <label id="your-email"></label>
             <input type="email" name="your-email" placeholder="Email" required/>
