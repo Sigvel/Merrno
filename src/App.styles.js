@@ -21,6 +21,7 @@ export const PageContainer = styled.div`
     border: solid 0.1rem #676f9d;
     border-bottom: none;
     padding: 0.5rem;
+    font-size: 2rem;
     @media (min-width: 1120px) {
       width: 75%;
       margin: 0 auto;
@@ -30,7 +31,7 @@ export const PageContainer = styled.div`
   @media (min-width: 530px) {
     padding: 11rem 1rem 10rem;
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 
