@@ -26,12 +26,12 @@ function ProductCart() {
 
                 <section className={styles.productInfo}>
                   <div className={styles.buttonBox}>
-                    <button className={styles.btnLeft} type="button" onClick={() => increment(product.id)}>
-                      <img src={Increment} alt="+"></img>
+                    <button className={styles.btnLeft} type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
+                      <img src={Decrement} alt="-"></img>
                     </button>
                     <div>{product.quantity}</div>
-                    <button className={styles.btnRight} type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
-                      <img src={Decrement} alt="-"></img>
+                    <button className={styles.btnRight} type="button" onClick={() => increment(product.id)}>
+                      <img src={Increment} alt="+"></img>
                     </button>
                   </div>
 
