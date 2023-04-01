@@ -1,9 +1,9 @@
 // Local storage
-export function saveLocalStorage(items) {
-  localStorage.setItem("items", JSON.stringify(items));
+export function saveLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
 }
 
-export function getLocalStorage() {
-  const stored = localStorage.getItem("items");
+export function getLocalStorage(key) {
+  const stored = localStorage.getItem(key);
   return stored ? JSON.parse(stored) : [];
 }
