@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ProductPrice from "../PriceCalculation/index";
 import { useStore } from "../../../hooks/useProductStore";
 
@@ -54,11 +54,11 @@ function ProductFetch() {
     notify();
   }
 
-const notify = () => toast("Item added to cart!", {autoClose: 500});
+  const notify = () => toast("Item added to cart!", { autoClose: 500 });
 
   return (
     <div className={styles.pageWrapper}>
-            <ToastContainer />
+      <ToastContainer />
       <h1>{product.title}</h1>
       <div className={styles.container}>
         <S.Card className={C.bigCard}>

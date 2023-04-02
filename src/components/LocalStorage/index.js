@@ -2,7 +2,7 @@
  * saves a value to local storage.
  * @param {string} key sets the key value in local storage
  * @param {object} value value to store in local storage
- * 
+ *
  * @example
  * ```
  * saveLocalStorage("product", array);

@@ -16,32 +16,37 @@ export const useProductStore = create((set) => ({
       let newProducts;
       if (productIndex !== -1) {
         newProducts = state.products.map((p, index) =>
-          index === productIndex ? { ...p, quantity: p.quantity + 1,
-            discountedPrice: p.discountedPrice + p.discountedPrice / p.quantity,
-            price: p.price + p.price / p.quantity } : p
+          index === productIndex
+            ? { ...p, quantity: p.quantity + 1, discountedPrice: p.discountedPrice + p.discountedPrice / p.quantity, price: p.price + p.price / p.quantity }
+            : p
         );
       } else {
         newProducts = [...state.products, { ...product, quantity: 1 }];
       }
 
-      const newCartQuantity = Number(state.cartQuantity) + 1
+      const newCartQuantity = Number(state.cartQuantity) + 1;
 
       saveLocalStorage("items", newProducts);
       saveLocalStorage("cartAmount", newCartQuantity);
 
-      return { products: newProducts, cartQuantity: newCartQuantity};
+      return { products: newProducts, cartQuantity: newCartQuantity };
     }),
 
   // increment quantity
   incrementQuantity: (id) =>
     set((state) => {
       const newProducts = state.products.map((product) =>
-        product.id === id ? { ...product, quantity: product.quantity + 1,
-        discountedPrice: ((product.quantity + 1) * product.discountedPrice) / product.quantity,
-        price: ((product.quantity + 1) * product.price) / product.quantity } : product
+        product.id === id
+          ? {
+              ...product,
+              quantity: product.quantity + 1,
+              discountedPrice: ((product.quantity + 1) * product.discountedPrice) / product.quantity,
+              price: ((product.quantity + 1) * product.price) / product.quantity,
+            }
+          : product
       );
 
-      const newCartQuantity =  Number(state.cartQuantity) + 1
+      const newCartQuantity = Number(state.cartQuantity) + 1;
 
       saveLocalStorage("items", newProducts);
       saveLocalStorage("cartAmount", newCartQuantity);
@@ -54,19 +59,21 @@ export const useProductStore = create((set) => ({
     set((state) => {
       const newProducts = state.products.map((product) =>
         product.id === id && product.quantity > 0
-          ? { ...product, quantity: Math.max(0, product.quantity - 1),
-            discountedPrice: (Math.max(0, product.quantity - 1) * product.discountedPrice) / product.quantity,
-            price: (Math.max(0, product.quantity - 1) * product.price) / product.quantity
-         } : { ...product }
+          ? {
+              ...product,
+              quantity: Math.max(0, product.quantity - 1),
+              discountedPrice: (Math.max(0, product.quantity - 1) * product.discountedPrice) / product.quantity,
+              price: (Math.max(0, product.quantity - 1) * product.price) / product.quantity,
+            }
+          : { ...product }
       );
 
-      const newCartQuantity = state.cartQuantity - 1
+      const newCartQuantity = state.cartQuantity - 1;
 
       saveLocalStorage("items", newProducts);
       saveLocalStorage("cartAmount", newCartQuantity);
 
-
-      return { products: newProducts, cartQuantity: newCartQuantity};
+      return { products: newProducts, cartQuantity: newCartQuantity };
     }),
 
   // Remove product
@@ -79,7 +86,7 @@ export const useProductStore = create((set) => ({
       saveLocalStorage("items", newProducts);
       saveLocalStorage("cartAmount", newCartQuantity);
 
-      return { products: newProducts, cartQuantity: newCartQuantity};
+      return { products: newProducts, cartQuantity: newCartQuantity };
     }),
 
   // Clear products and amount.
@@ -89,7 +96,7 @@ export const useProductStore = create((set) => ({
       const orderedProducts = {
         products: state.products,
         totalCost,
-      }
+      };
 
       localStorage.removeItem("items");
       localStorage.removeItem("cartAmount");
@@ -97,7 +104,7 @@ export const useProductStore = create((set) => ({
       return { order: orderedProducts, products: [], cartQuantity: 0 };
     }),
 
-    clearCart: () => set(() => ({ order: []})),
+  clearCart: () => set(() => ({ order: [] })),
 }));
 
 /**
@@ -128,15 +135,15 @@ function useStore() {
     console.log(products);
   }
 
-  function getCartTotal() { 
-  return products.reduce((total, product) => total + product.discountedPrice, 0);
+  function getCartTotal() {
+    return products.reduce((total, product) => total + product.discountedPrice, 0);
   }
 
   function cartCheckout() {
     checkout();
   }
 
-  return { addToCart, removeFromCart, cartCheckout, getCartTotal, increment, decrement};
+  return { addToCart, removeFromCart, cartCheckout, getCartTotal, increment, decrement };
 }
 
 export { useStore };

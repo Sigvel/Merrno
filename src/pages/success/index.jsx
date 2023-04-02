@@ -32,7 +32,12 @@ function Success() {
             <p className={styles.total}>Total: {Math.round(totalCost)} kr</p>
           </div>
           <div className={styles.buttonWrapper}>
-            <S.Button> <Link to="/" onClick={() => clearCart()}>Back to shopping</Link></S.Button>
+            <S.Button>
+              {" "}
+              <Link to="/" onClick={() => clearCart()}>
+                Back to shopping
+              </Link>
+            </S.Button>
           </div>
         </div>
       </div>
