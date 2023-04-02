@@ -4,13 +4,13 @@ import * as S from "../../App.styles";
 import styles from "./Product.module.scss";
 
 function Product() {
-    let params = useParams();
-    
-    return (
+  let params = useParams();
+
+  return (
     <S.PageContainer className={styles.contentWrapper}>
       <ProductFetch id={params.id} />
     </S.PageContainer>
-    )
-  }
+  );
+}
 
-  export default Product
+export default Product;

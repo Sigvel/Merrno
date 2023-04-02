@@ -7,7 +7,6 @@ import { useStore, useProductStore } from "../../hooks/useProductStore";
 
 import * as S from "../../App.styles";
 import styles from "./Cart.module.scss";
-import F from "../../scss/modules/pageFeature/Feature.module.scss";
 
 function Cart() {
   const { getCartTotal, cartCheckout } = useStore();
@@ -45,18 +44,18 @@ function Cart() {
           <section className={styles.checkout}>
             <div>Total: {Math.round(total)} kr</div>
             {products.length === 0 ? (
-            <div className={styles.toShoppingButton}>
-              <Link to="/">
-                <S.Button>Back to shopping</S.Button>
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <Link onClick={() => checkoutButton()} to="/success">
-                <S.Button>Checkout</S.Button>
-              </Link>
-            </div>
-          )}
+              <div className={styles.toShoppingButton}>
+                <Link to="/">
+                  <S.Button>Back to shopping</S.Button>
+                </Link>
+              </div>
+            ) : (
+              <div>
+                <Link onClick={() => checkoutButton()} to="/success">
+                  <S.Button>Checkout</S.Button>
+                </Link>
+              </div>
+            )}
           </section>
         </div>
       </div>

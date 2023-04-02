@@ -1,24 +1,23 @@
-import "../../../scss/styles.scss"
+import "../../../scss/styles.scss";
 
 /**
  * returns discounted price.
  * @param {number} param1 number value
  * @param {number} param2 number value
  * @returns discounted price in %;
- * 
+ *
  * @example
  * ```
  * productPrice(1699, 1529);
  * returns: react component with a calculated discount -> -10%
  * ```
  */
-function ProductPrice({price, discount}) {
-
+function ProductPrice({ price, discount }) {
   let sale;
   let discountedPrice;
 
   if (price !== discount) {
-    discountedPrice = price - (price * (discount / price));
+    discountedPrice = price - price * (discount / price);
     sale = (discountedPrice / price) * 100;
   } else {
     sale = false;
@@ -26,7 +25,12 @@ function ProductPrice({price, discount}) {
 
   return (
     <div>
-      <p className={sale ? "sale" : ""}>{price },-</p>{sale && <p>{discount} <span className="sale-color"> -{Math.round(sale)}%</span></p>}
+      <p className={sale ? "sale" : ""}>{price},-</p>
+      {sale && (
+        <p>
+          {discount} <span className="sale-color"> -{Math.round(sale)}%</span>
+        </p>
+      )}
     </div>
   );
 }

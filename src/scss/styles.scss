@@ -2,33 +2,33 @@
 @import url(./components/search/searchResult.scss);
 
 .element-border {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: solid 0.1rem #676F9D;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 0.1rem #676f9d;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .truncate {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    overflow:hidden;
-    -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }
- // Sale
+
 .sale {
-    color: gainsboro !important;
-    margin-bottom: 0rem;
-    text-decoration: line-through;
+  color: gainsboro !important;
+  margin-bottom: 0rem;
+  text-decoration: line-through;
 }
 
 .product-info {
-    flex: 1;
-  }
-
-.sale-color {
-    color: red;
+  flex: 1;
 }
 
+.sale-color {
+  color: red;
+}

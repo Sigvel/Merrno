@@ -25,7 +25,7 @@ function Contact() {
     const formData = new FormData(formCredentials);
     const formValues = Object.fromEntries(formData.entries());
     console.log(formValues);
-    
+
     notify("Form successfully submitted");
     document.getElementById("contact-form").reset();
   }

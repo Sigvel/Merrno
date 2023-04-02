@@ -25,9 +25,7 @@ function AllProducts({ products }) {
               <section>
                 <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
                 <div>
-                  <S.Button>
-                    Show
-                  </S.Button>
+                  <S.Button>Show</S.Button>
                 </div>
               </section>
             </S.Card>

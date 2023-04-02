@@ -43,24 +43,24 @@ const ComponentWithInput = ({ onClick }) => {
       </S.SearchBar>
       {filteredProducts.length > 0 ? (
         <div className="scroll-box">
-        <ol className="search-result">
-          {filteredProducts.map((product) => {
-            return (
-              <Link to={`/product/${product.id}`}>
-              <li key={product.id}>
-                <figure>
-                  <img src={product.imageUrl} alt={product.title} />
-                </figure>
-                <h2>{product.title}</h2>
-                <p>Price: {product.discountedPrice},-</p>
-              </li>
-              </Link>
-            );
-          })}
-        </ol>
-      </div>
+          <ol className="search-result">
+            {filteredProducts.map((product) => {
+              return (
+                <Link to={`/product/${product.id}`}>
+                  <li key={product.id}>
+                    <figure>
+                      <img src={product.imageUrl} alt={product.title} />
+                    </figure>
+                    <h2>{product.title}</h2>
+                    <p>Price: {product.discountedPrice},-</p>
+                  </li>
+                </Link>
+              );
+            })}
+          </ol>
+        </div>
       ) : (
-        <div></div>
+        null
       )}
     </>
   );
