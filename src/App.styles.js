@@ -83,6 +83,7 @@ export const AsideFeature = styled.aside`
   border: 0.1rem solid #676f9d;
   background: #2d3250;
   inset: auto 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .img-box {
     display: flex;
@@ -110,7 +111,6 @@ export const AsideFeature = styled.aside`
     }
 
     @media (min-width: 1120px) {
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       border-radius: 0.5rem;
       overflow-x: initial;
       position: initial;
@@ -216,8 +216,8 @@ export const SearchBar = styled.div`
     img {
       width: 7rem;
       background: none;
-      margin: 0rem 1.1rem;
-      padding: 0rem 2.1rem;
+      margin: 0rem 1rem;
+      padding: 0rem 2rem;
       right: 21.5rem;
 
       @media (min-width: 780px) {
