@@ -1,6 +1,9 @@
 import { create } from "zustand";
 import { saveLocalStorage, getLocalStorage } from "../components/LocalStorage";
-// product store
+
+/**
+ * Handle's cart functionality for products
+ */
 export const useProductStore = create((set) => ({
   products: getLocalStorage("items", []),
   order: [],
@@ -97,6 +100,9 @@ export const useProductStore = create((set) => ({
     clearCart: () => set(() => ({ order: []})),
 }));
 
+/**
+ * Handles the product store functions and states.
+ */
 function useStore() {
   const addProduct = useProductStore((state) => state.addProduct);
   const removeProduct = useProductStore((state) => state.removeProduct);
