@@ -1,6 +1,18 @@
 import "../../../scss/styles.scss"
 
-function ProductPrice({ price, discount }) {
+/**
+ * returns discounted price.
+ * @param {number} param1 number value
+ * @param {number} param2 number value
+ * @returns discounted price in %;
+ * 
+ * @example
+ * ```
+ * productPrice(1699, 1529);
+ * returns: react component with a calculated discount -> -10%
+ * ```
+ */
+function ProductPrice({price, discount}) {
 
   let sale;
   let discountedPrice;

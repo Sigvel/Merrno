@@ -13,7 +13,7 @@ function Cart() {
   const { getCartTotal, cartCheckout } = useStore();
   const products = useProductStore((state) => state.products);
   const total = getCartTotal();
-  console.log(products.length);
+
   const notify = (message) => toast(message, { autoClose: 1000 });
 
   function checkoutButton() {

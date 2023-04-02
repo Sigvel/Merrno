@@ -1,23 +1,23 @@
 .featureButton {
-padding: 1.2rem;
-justify-content: center;
-flex-direction: column;
-div:has(button) {
+  padding: 1.2rem;
+  justify-content: center;
+  flex-direction: column;
+  div:has(button) {
     margin: 0 auto;
-}
+  }
 
-@media (min-width: 1120px) {
+  @media (min-width: 1120px) {
     display: flex;
     flex-direction: column;
-    
+
     flex: 1;
   }
 
-button {
+  button {
     padding: 1rem 3rem;
 
     @media (min-width: 530px) {
-        font-size: 1.3rem;
+      font-size: 1.3rem;
     }
-}
+  }
 }

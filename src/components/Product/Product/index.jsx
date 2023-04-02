@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductPrice from "../PriceCalculation/index";
-import Breadcrumbs from "../../Breadcrumbs/index";
 import { useStore } from "../../../hooks/useProductStore";
 
 import * as S from "../../../App.styles";
@@ -61,7 +60,6 @@ const notify = () => toast("Item added to cart!", {autoClose: 500});
     <div className={styles.pageWrapper}>
             <ToastContainer />
       <h1>{product.title}</h1>
-      <Breadcrumbs />
       <div className={styles.container}>
         <S.Card className={C.bigCard}>
           <figure>
@@ -90,7 +88,7 @@ const notify = () => toast("Item added to cart!", {autoClose: 500});
             </div>
           </section>
 
-          <section>
+          <section className={styles.productRating}>
             <h2>Rating</h2>
             <p>{product.rating} / 5</p>
           </section>

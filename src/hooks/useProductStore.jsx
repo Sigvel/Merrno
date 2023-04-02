@@ -1,10 +1,13 @@
 import { create } from "zustand";
 import { saveLocalStorage, getLocalStorage } from "../components/LocalStorage";
-// product store
+
+/**
+ * Handle's cart functionality for products
+ */
 export const useProductStore = create((set) => ({
-  products: getLocalStorage(),
+  products: getLocalStorage("items", []),
   order: [],
-  cartQuantity: 0,
+  cartQuantity: getLocalStorage("cartAmount", 0),
 
   // Add products.
   addProduct: (product) =>
@@ -20,8 +23,13 @@ export const useProductStore = create((set) => ({
       } else {
         newProducts = [...state.products, { ...product, quantity: 1 }];
       }
-      saveLocalStorage(newProducts);
-      return { products: newProducts, cartQuantity: state.cartQuantity + 1 };
+
+      const newCartQuantity = Number(state.cartQuantity) + 1
+
+      saveLocalStorage("items", newProducts);
+      saveLocalStorage("cartAmount", newCartQuantity);
+
+      return { products: newProducts, cartQuantity: newCartQuantity};
     }),
 
   // increment quantity
@@ -33,10 +41,12 @@ export const useProductStore = create((set) => ({
         price: ((product.quantity + 1) * product.price) / product.quantity } : product
       );
 
+      const newCartQuantity =  Number(state.cartQuantity) + 1
 
-      saveLocalStorage(newProducts);
+      saveLocalStorage("items", newProducts);
+      saveLocalStorage("cartAmount", newCartQuantity);
 
-      return { products: newProducts, cartQuantity: state.cartQuantity + 1 };
+      return { products: newProducts, cartQuantity: newCartQuantity };
     }),
 
   // decrement quantity
@@ -50,8 +60,13 @@ export const useProductStore = create((set) => ({
          } : { ...product }
       );
 
-      saveLocalStorage(newProducts);
-      return { products: newProducts, cartQuantity: state.cartQuantity - 1 };
+      const newCartQuantity = state.cartQuantity - 1
+
+      saveLocalStorage("items", newProducts);
+      saveLocalStorage("cartAmount", newCartQuantity);
+
+
+      return { products: newProducts, cartQuantity: newCartQuantity};
     }),
 
   // Remove product
@@ -61,7 +76,9 @@ export const useProductStore = create((set) => ({
       const newCartQuantity = state.cartQuantity - (product ? product.quantity : 0);
       const newProducts = state.products.filter((product) => product.id !== id);
 
-      saveLocalStorage(newProducts);
+      saveLocalStorage("items", newProducts);
+      saveLocalStorage("cartAmount", newCartQuantity);
+
       return { products: newProducts, cartQuantity: newCartQuantity};
     }),
 
@@ -75,13 +92,17 @@ export const useProductStore = create((set) => ({
       }
 
       localStorage.removeItem("items");
+      localStorage.removeItem("cartAmount");
 
-      return { order: orderedProducts, cartQuantity: 0 };
+      return { order: orderedProducts, products: [], cartQuantity: 0 };
     }),
 
     clearCart: () => set(() => ({ order: []})),
 }));
 
+/**
+ * Handles the product store functions and states.
+ */
 function useStore() {
   const addProduct = useProductStore((state) => state.addProduct);
   const removeProduct = useProductStore((state) => state.removeProduct);

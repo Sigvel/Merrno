@@ -21,6 +21,7 @@ export const PageContainer = styled.div`
     border: solid 0.1rem #676f9d;
     border-bottom: none;
     padding: 0.5rem;
+    font-size: 2rem;
     @media (min-width: 1120px) {
       width: 75%;
       margin: 0 auto;
@@ -30,7 +31,7 @@ export const PageContainer = styled.div`
   @media (min-width: 530px) {
     padding: 11rem 1rem 10rem;
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 
@@ -82,6 +83,7 @@ export const AsideFeature = styled.aside`
   border: 0.1rem solid #676f9d;
   background: #2d3250;
   inset: auto 0.5rem 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .img-box {
     display: flex;
@@ -109,7 +111,6 @@ export const AsideFeature = styled.aside`
     }
 
     @media (min-width: 1120px) {
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       border-radius: 0.5rem;
       overflow-x: initial;
       position: initial;
@@ -215,8 +216,8 @@ export const SearchBar = styled.div`
     img {
       width: 7rem;
       background: none;
-      margin: 0rem 1.1rem;
-      padding: 0rem 2.1rem;
+      margin: 0rem 1rem;
+      padding: 0rem 2rem;
       right: 21.5rem;
 
       @media (min-width: 780px) {
