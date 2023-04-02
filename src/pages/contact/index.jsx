@@ -1,4 +1,5 @@
-import "../../validation/index";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./Contact.module.scss";
 import * as S from "../../App.styles";
@@ -15,9 +16,24 @@ import LinkedinIcon from "../../assets/interface/social/icons8-linkedin-48.png";
 import TwitterIcon from "../../assets/interface/social/icons8-twitter-48.png";
 
 function Contact() {
+  const notify = (message) => toast(message, { autoClose: 1000 });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const formCredentials = e.target;
+
+    const formData = new FormData(formCredentials);
+    const formValues = Object.fromEntries(formData.entries());
+    console.log(formValues);
+    
+    notify("Form successfully submitted");
+    document.getElementById("contact-form").reset();
+  }
+
   return (
     <S.PageContainer className={styles.common}>
       <h1>Contact</h1>
+      <ToastContainer />
       <div className={styles.contentWrapper}>
         <S.Card className={styles.about}>
           <section>
@@ -63,12 +79,12 @@ function Contact() {
         </S.Card>
 
         <S.AsideFeature className={F.featureButton}>
-        <h2>Contact</h2>
-          <form id="contact-form">
+          <h2>Contact</h2>
+          <form id="contact-form" onSubmit={handleSubmit}>
             <label id="your-email"></label>
-            <input type="email" name="your-email" placeholder="Email" required/>
+            <input type="email" name="your-email" placeholder="Email" required />
             <label id="your-full-name"></label>
-            <input type="text" name="your-full-name" minLength="3" placeholder="Full name" required/>
+            <input type="text" name="your-full-name" minLength="3" placeholder="Full name" required />
             <label id="your-subject"></label>
             <input type="text" name="your-subject" minLength="3" placeholder="subject" />
             <label id="your-message"></label>
