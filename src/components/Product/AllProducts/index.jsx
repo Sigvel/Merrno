@@ -26,7 +26,7 @@ function AllProducts({ products }) {
                 <ProductPrice price={product.price} discount={product.discountedPrice}></ProductPrice>
                 <div>
                   <S.Button>
-                    <Link to={`/product/${product.id}`}>Show</Link>
+                    Show
                   </S.Button>
                 </div>
               </section>
