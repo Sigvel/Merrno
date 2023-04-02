@@ -44,21 +44,7 @@ function Cart() {
 
           <section className={styles.checkout}>
             <div>Total: {Math.round(total)} kr</div>
-          </section>
-        </div>
-        <S.AsideFeature className={F.featureButton}>
-          <h2>Billing address</h2>
-          <form>
-            <label></label>
-            <input name="your-email" type="email" placeholder="Email" />
-            <label></label>
-            <input name="your-name" type="text" placeholder="Full name" />
-            <label></label>
-            <input name="your-address" type="text" placeholder="Address" />
-            <label></label>
-            <input name="your-country-code" type="text" placeholder="Country Code" />
-          </form>
-          {products.length === 0 ? (
+            {products.length === 0 ? (
             <div className={styles.toShoppingButton}>
               <Link to="/">
                 <S.Button>Back to shopping</S.Button>
@@ -71,7 +57,8 @@ function Cart() {
               </Link>
             </div>
           )}
-        </S.AsideFeature>
+          </section>
+        </div>
       </div>
     </S.PageContainer>
   );
