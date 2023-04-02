@@ -10,48 +10,48 @@ function ProductCart() {
   const products = useProductStore((state) => state.products);
   const { increment, decrement, removeFromCart } = useStore();
 
-  return (
-    <>
-      {products.length > 0 ? (
-        <>
-          {products.map((product) => {
-            return (
-              <S.Card key={product.id} className={styles.productCard}>
-                <div className={styles.imgTitleWrap}>
-                  <figure className={styles.imgBox}>
-                    <img src={product.imageUrl} alt={product.title} />
-                  </figure>
-                  <h3>{product.title}</h3>
+  if (products.length > 0) {
+    return (
+      <>
+        {products.map((product) => {
+          return (
+            <S.Card key={product.id} className={styles.productCard}>
+              <div className={styles.imgTitleWrap}>
+                <figure className={styles.imgBox}>
+                  <img src={product.imageUrl} alt={product.title} />
+                </figure>
+                <h3>{product.title}</h3>
+              </div>
+
+              <section className={styles.productInfo}>
+                <div className={styles.buttonBox}>
+                  <button className={styles.btnLeft} type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
+                    <img src={Decrement} alt="-"></img>
+                  </button>
+                  <div>{product.quantity}</div>
+                  <button className={styles.btnRight} type="button" onClick={() => increment(product.id)}>
+                    <img src={Increment} alt="+"></img>
+                  </button>
                 </div>
 
-                <section className={styles.productInfo}>
-                  <div className={styles.buttonBox}>
-                    <button className={styles.btnLeft} type="button" onClick={() => decrement(product.id)} disabled={product.quantity === 1}>
-                      <img src={Decrement} alt="-"></img>
-                    </button>
-                    <div>{product.quantity}</div>
-                    <button className={styles.btnRight} type="button" onClick={() => increment(product.id)}>
-                      <img src={Increment} alt="+"></img>
-                    </button>
-                  </div>
+                <div className={styles.productCartDetails}>
+                  <p>{Math.ceil(product.discountedPrice)} kr</p>
+                  <button className={styles.deleteButton} type="button" onClick={() => removeFromCart(product.id)}>
+                    <img src={DeleteImg} alt="Delete button" />
+                  </button>
+                </div>
+              </section>
+            </S.Card>
+          );
+        })}
+      </>
+    );
+  }
 
-                  <div className={styles.productCartDetails}>
-                    <p>{Math.ceil(product.discountedPrice)} kr</p>
-                    <button className={styles.deleteButton} type="button" onClick={() => removeFromCart(product.id)}>
-                      <img src={DeleteImg} alt="Delete button" />
-                    </button>
-                  </div>
-                </section>
-              </S.Card>
-            );
-          })}
-        </>
-      ) : (
-        <div className={styles.emptyCart}>
-          <h2>Your shopping cart is empty</h2>
-        </div>
-      )}
-    </>
+  return (
+    <div className={styles.emptyCart}>
+      <h2>Your shopping cart is empty</h2>
+    </div>
   );
 }
 
