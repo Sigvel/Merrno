@@ -98,15 +98,19 @@ function ProductFetch() {
       <S.AsideFeature className={F.featureButton}>
         <section className={styles.reviewSection}>
           <h2>Reviews</h2>
-          {product.reviews.map((review) => {
-            return (
-              <S.Card key={review.id} className={styles.review}>
-                <h2>{review.username}</h2>
-                <p>{review.description}</p>
-                <p className={styles.rating}>Rated: {review.rating} / 5</p>
-              </S.Card>
-            );
-          })}
+          {product.reviews.length > 0 ? (
+            product.reviews.map((review) => {
+              return (
+                <S.Card key={review.id} className={styles.review}>
+                  <h2>{review.username}</h2>
+                  <p>{review.description}</p>
+                  <p className={styles.rating}>Rated: {review.rating} / 5</p>
+                </S.Card>
+              );
+            })
+          ) : (
+            <div>Product has no reviews</div>
+          )}
         </section>
       </S.AsideFeature>
     </div>
