@@ -25,6 +25,7 @@ const Icon = ({ onClick }) => {
  */
 const ComponentWithInput = ({ onClick }) => {
   const { filteredProducts, handleFilter, searchTerm } = useContext(DataContext);
+  const searchRes = document.getElementsByClassName("search-result");
 
   /**
    * Search event value catcher
@@ -33,6 +34,11 @@ const ComponentWithInput = ({ onClick }) => {
   const handleSearch = (e) => {
     handleFilter(e.target.value);
   };
+
+  const hideSearch = () => {
+    searchRes.styles.display = "none";
+  };
+
   return (
     <>
       <S.SearchBar>
@@ -46,8 +52,8 @@ const ComponentWithInput = ({ onClick }) => {
           <ol className="search-result">
             {filteredProducts.map((product) => {
               return (
-                <Link to={`/product/${product.id}`}>
-                  <li key={product.id}>
+                <Link key={product.id} to={`/product/${product.id}`} onClick={hideSearch}>
+                  <li>
                     <figure>
                       <img src={product.imageUrl} alt={product.title} />
                     </figure>
@@ -59,9 +65,7 @@ const ComponentWithInput = ({ onClick }) => {
             })}
           </ol>
         </div>
-      ) : (
-        null
-      )}
+      ) : null}
     </>
   );
 };
