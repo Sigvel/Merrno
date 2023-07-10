@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../layout/Layout";
 import { Link } from "react-router-dom";
 
@@ -24,19 +24,30 @@ const Icon = ({ onClick }) => {
  * @param {event} handleClick closes the search input
  */
 const ComponentWithInput = ({ onClick }) => {
-  const { filteredProducts, handleFilter, searchTerm } = useContext(DataContext);
+  const { products } = useContext(DataContext);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const searchRes = document.getElementsByClassName("search-result");
 
-  /**
-   * Search event value catcher
-   * @param {event} e Contains the value of the input
-   */
+  useEffect(() => {
+    if (searchTerm === "") {
+      setFilteredProducts(products);
+    }
+  }, [searchTerm, setFilteredProducts, products])
+
   const handleSearch = (e) => {
-    handleFilter(e.target.value);
+    const updatedSearchTerm = e.target.value;
+  setSearchTerm(updatedSearchTerm);
+
+      const filteredData = products.filter((product) => product.title.toLowerCase().includes(updatedSearchTerm.toLowerCase()));
+
+      setFilteredProducts(filteredData);
   };
 
   const hideSearch = () => {
-    searchRes.styles.display = "none";
+    for (let i = 0; i < searchRes.length; i++) {
+      searchRes[i].style.display = "none";
+    }
   };
 
   return (
@@ -47,8 +58,8 @@ const ComponentWithInput = ({ onClick }) => {
           <img src={SearchIcon} alt="Search Icon" />
         </label>
       </S.SearchBar>
-      {filteredProducts.length > 0 ? (
-        <div className="scroll-box">
+      <div className="scroll-box">
+        {filteredProducts.length > 0 ? (
           <ol className="search-result">
             {filteredProducts.map((product) => {
               return (
@@ -64,8 +75,10 @@ const ComponentWithInput = ({ onClick }) => {
               );
             })}
           </ol>
-        </div>
-      ) : null}
+        ) : (
+          <div style={{textAlign: "center"}}>Search for a product</div>
+        )}
+      </div>
     </>
   );
 };
